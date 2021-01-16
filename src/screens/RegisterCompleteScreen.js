@@ -96,16 +96,16 @@ const RegisterCompleteScreen = props => {
         phone,
       }),
     };
-    fetch('https://api.heartsignalapp.com/users/send-auth', fetchOptions)
+    fetch('http://10.0.2.2:3000/api/users/send-auth', fetchOptions)
       .then(res => {
-        if (res.status === 202) {
+        if (res.status === 200) {
           setIsAuthSent(true);
           alert('인증번호를 1분 내로 입력해주세요');
         }
       })
       .catch(err => {
         console.log(err);
-        alert('서버에서 답이 없어요.');
+        alert(err);
       });
   };
 
@@ -127,10 +127,10 @@ const RegisterCompleteScreen = props => {
         authCode,
       }),
     };
-    fetch('https://api.heartsignalapp.com/users/check-auth', fetchOptions)
+    fetch('http://10.0.2.2:3000/api/users/check-auth', fetchOptions)
       .then(async res => {
-        const data = await res.json();
-        if (!data.data.isSucceeded) {
+        console.log(res.status);
+        if (res.status !== 200) {
           alert('인증 실패');
           return;
         } else if (res.status === 200) {
@@ -165,7 +165,7 @@ const RegisterCompleteScreen = props => {
         name,
       }),
     };
-    fetch('https://api.heartsignalapp.com/users/', fetchOptions)
+    fetch('http://10.0.2.2:3000/api/users/', fetchOptions) // TODO: check if this communicates with the server properly.
       .then(async res => {
         const data = await res.json();
         Users.setUser(data.data.token, data.data.name, data.data.phone);

@@ -96,11 +96,9 @@ const RegisterScreen = props => {
       alert('비밀번호가 일치하지 않습니다.');
       return;
     } else {
-      fetch('https://api.heartsignalapp.com/users/temp', fetchOptions)
+      fetch('http://10.0.2.2:3000/api/users/try', fetchOptions)
         .then(async res => {
-          const data = await res.json();
-          if (true) {
-            // TODO: should add a condition here.
+          if (res.status === 200) {
             props.navigation.navigate('RegisterCompleteScreen', {
               email,
               password,
@@ -108,12 +106,7 @@ const RegisterScreen = props => {
           }
         })
         .catch(err => {
-          alert('서버에서 답을 주지 않았지만 봐줄게요.');
-          // TODO: delete lines below
-          props.navigation.navigate('RegisterCompleteScreen', {
-            email,
-            password,
-          });
+          alert(err);
           console.log(err);
         });
     }
