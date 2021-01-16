@@ -69,7 +69,7 @@ const ButtonText = styled.Text`
 
 const CheckButtonText = styled.Text``;
 
-const RegisterScreen = props => {
+const RegisterScreen = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordCheck, setPasswordCheck] = useState('');
@@ -97,7 +97,7 @@ const RegisterScreen = props => {
       return;
     } else {
       fetch('http://10.0.2.2:3000/api/users/try', fetchOptions)
-        .then(async res => {
+        .then(async (res) => {
           if (res.status === 200) {
             props.navigation.navigate('RegisterCompleteScreen', {
               email,
@@ -105,7 +105,7 @@ const RegisterScreen = props => {
             });
           }
         })
-        .catch(err => {
+        .catch((err) => {
           alert(err);
           console.log(err);
         });
@@ -126,32 +126,32 @@ const RegisterScreen = props => {
         email,
       }),
     };
-    fetch('https://api.heartsignalapp.com/users/check-duplicate', fetchOptions)
-      .then(async res => {
+    fetch('http://10.0.2.2:3000/api/users/check-duplicate', fetchOptions)
+      .then(async (res) => {
         const data = await res.json();
-        if (data.data.isDuplicate) {
+        if (data.isDuplicate) {
           alert('사용 중인 이메일입니다.');
         } else {
           alert('사용 가능한 이메일입니다.');
           setIsDuplicateChecked(true);
         }
       })
-      .catch(err => {
+      .catch((err) => {
         alert('서버 쪽에서 답이 안 왔지만 봐줄게요.');
         setIsDuplicateChecked(true); // TODO: delete this line.
         console.log(err);
       });
   };
 
-  const handleEmailChange = txt => {
+  const handleEmailChange = (txt) => {
     setEmail(txt);
   };
 
-  const handlePasswordChange = txt => {
+  const handlePasswordChange = (txt) => {
     setPassword(txt);
   };
 
-  const handlePasswordCheckChange = txt => {
+  const handlePasswordCheckChange = (txt) => {
     setPasswordCheck(txt);
   };
 
