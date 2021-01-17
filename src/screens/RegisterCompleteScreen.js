@@ -61,24 +61,24 @@ const ButtonText = styled.Text`
   font-size: 17px;
 `;
 
-const RegisterCompleteScreen = props => {
+const RegisterCompleteScreen = (props) => {
   const [phone, setPhone] = useState('');
   const [name, setName] = useState('');
   const [authCode, setAuthCode] = useState('');
   const [isAuthSent, setIsAuthSent] = useState(false);
   const [isAuthSucceeded, setIsAuthSucceeded] = useState(false);
 
-  const handlePhoneChange = txt => {
+  const handlePhoneChange = (txt) => {
     setPhone(txt);
     setIsAuthSent(false);
   };
 
-  const handleAuthCodeChange = txt => {
+  const handleAuthCodeChange = (txt) => {
     setAuthCode(txt);
     setIsAuthSucceeded(false);
   };
 
-  const handleNameChange = txt => {
+  const handleNameChange = (txt) => {
     setName(txt);
   };
 
@@ -97,13 +97,13 @@ const RegisterCompleteScreen = props => {
       }),
     };
     fetch('http://10.0.2.2:3000/api/users/send-auth', fetchOptions)
-      .then(res => {
+      .then((res) => {
         if (res.status === 200) {
           setIsAuthSent(true);
           alert('인증번호를 1분 내로 입력해주세요');
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         alert(err);
       });
@@ -128,8 +128,7 @@ const RegisterCompleteScreen = props => {
       }),
     };
     fetch('http://10.0.2.2:3000/api/users/check-auth', fetchOptions)
-      .then(async res => {
-        console.log(res.status);
+      .then((res) => {
         if (res.status !== 200) {
           alert('인증 실패');
           return;
@@ -138,7 +137,7 @@ const RegisterCompleteScreen = props => {
           alert('인증 성공!');
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         alert('서버에서 답이 없어요.');
       });
@@ -165,13 +164,13 @@ const RegisterCompleteScreen = props => {
         name,
       }),
     };
-    fetch('http://10.0.2.2:3000/api/users/', fetchOptions) // TODO: check if this communicates with the server properly.
-      .then(async res => {
+    fetch('http://10.0.2.2:3000/api/users/', fetchOptions)
+      .then(async (res) => {
         const data = await res.json();
-        Users.setUser(data.data.token, data.data.name, data.data.phone);
+        Users.setUser(data.token, data.name, data.phone);
         props.navigation.reset({index: 0, routes: [{name: 'Main'}]});
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         alert('서버에서 답이 없어요.');
       });

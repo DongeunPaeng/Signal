@@ -97,7 +97,7 @@ const RegisterScreen = (props) => {
       return;
     } else {
       fetch('http://10.0.2.2:3000/api/users/try', fetchOptions)
-        .then(async (res) => {
+        .then((res) => {
           if (res.status === 200) {
             props.navigation.navigate('RegisterCompleteScreen', {
               email,
@@ -138,7 +138,6 @@ const RegisterScreen = (props) => {
       })
       .catch((err) => {
         alert('서버 쪽에서 답이 안 왔지만 봐줄게요.');
-        setIsDuplicateChecked(true); // TODO: delete this line.
         console.log(err);
       });
   };
@@ -164,7 +163,7 @@ const RegisterScreen = (props) => {
           onChangeText={handleEmailChange}
         />
         <CheckButton onPress={checkDuplicate}>
-          <CheckButtonText>중복 확인</CheckButtonText>
+          <CheckButtonText>중복확인</CheckButtonText>
         </CheckButton>
       </Wrapper>
       <Text>비밀번호</Text>

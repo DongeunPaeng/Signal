@@ -6,7 +6,7 @@ import RootNavigator from './src/navigators/RootNavigator';
 
 const App = () => (
   <>
-    <StatusBar barStyle="dark-content" />
+    <StatusBar barStyle="dark-content" backgroundColor="white" />
     <SafeAreaView style={{width: '100%', height: '100%'}}>
       <NavigationContainer>
         <RootNavigator />

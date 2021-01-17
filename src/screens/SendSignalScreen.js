@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {Alert} from 'react-native';
 import styled from 'styled-components/native';
+import {Alert} from 'react-native';
 
 import Users from '../stores/Users';
 
@@ -73,13 +73,45 @@ const ButtonText = styled.Text`
   font-size: 17px;
 `;
 
-const SendSignalScreen = props => {
+const SendSignalScreen = (props) => {
   const [msg, setMsg] = useState('');
-  const handleTextChange = txt => {
+  const handleTextChange = (txt) => {
     setMsg(txt);
   };
-  const sendSignal = () => {
-    console.log('sending text...'); // TODO: 문자 보내기 구현
+  const sendSignal = async () => {
+    if (!msg) {
+      alert('메시지를 입력해주세요.');
+      return;
+    }
+    const fetchOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: 'bearer ' + Users.token,
+      },
+      body: JSON.stringify({
+        receiverName: props.route.params.name,
+        receiverPhone: props.route.params.phone,
+        msg,
+      }),
+    };
+    fetch('http://10.0.2.2:3000/api/users/send-signal', fetchOptions)
+      .then(async(res) => {
+        if (res.status !== 200) {
+          alert('서버에서 답이 이상하게 왔어요.');
+        } else {
+          Alert.alert('발송 완료', '문자가 전송되었습니다.', [
+            {
+              text: '확인',
+              onPress: () =>
+                props.navigation.reset({index: 0, routes: [{name: 'Home'}]}),
+            },
+          ]);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (

@@ -1,6 +1,8 @@
 import {observable, action} from 'mobx';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+// AsyncStorage.clear();
+
 class User {
   @observable token = '';
   @observable name = '';

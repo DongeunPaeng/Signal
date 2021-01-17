@@ -21,19 +21,17 @@ const ProfileTxtView = styled.View`
   margin-left: 20px;
 `;
 
-const NameView = styled.View`
+const InfoView = styled.View`
   flex: 1;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 `;
 
 const NameTxt = styled.Text`
+  text-transform: uppercase;
   font-weight: bold;
   font-size: 16px;
-`;
-
-const PhoneView = styled.View`
-  flex: 1;
 `;
 
 const PhoneTxt = styled.Text``;
@@ -62,12 +60,10 @@ const MySignalScreen = () => (
   <Container>
     <ProfileView>
       <ProfileTxtView>
-        <NameView>
+        <InfoView>
           <NameTxt>{Users.name}</NameTxt>
-        </NameView>
-        <PhoneView>
           <PhoneTxt>{Users.phone}</PhoneTxt>
-        </PhoneView>
+        </InfoView>
       </ProfileTxtView>
       <ProfileImgView>
         <ProfileImg

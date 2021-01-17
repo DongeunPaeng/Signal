@@ -15,20 +15,22 @@ const TxtView = styled.View`
 
 const MsgTextView = styled.View`
   margin-top: 10px;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 const MsgText = styled.Text`
-  font-size: 20px;
+  font-size: 14px;
 `;
-const SignalCard = ({content}) => {
+const SignalCard = ({location, date, to = undefined, msg}) => {
   return (
     <CardView cardElevation={2} cardMaxElevation={2} cornerRadius={10}>
       <Container>
         <TxtView>
           <MsgTextView>
-            <MsgText>{content}</MsgText>
+            <MsgText>{location} 날짜: {date}</MsgText>
+            <MsgText>{location} 문자: {msg}</MsgText>
+            {to && <MsgText>받은 사람: {to}</MsgText>}
           </MsgTextView>
         </TxtView>
       </Container>

@@ -1,4 +1,3 @@
-// TODO: fetch real data
 import React, {useState} from 'react';
 
 import Users from '../stores/Users';
@@ -51,15 +50,15 @@ const ClickableText = styled.Text`
   text-decoration = underline;
 `;
 
-const LoginScreen = props => {
+const LoginScreen = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleEmailChange = txt => {
+  const handleEmailChange = (txt) => {
     setEmail(txt);
   };
 
-  const handlePasswordChange = txt => {
+  const handlePasswordChange = (txt) => {
     setPassword(txt);
   };
 
@@ -78,22 +77,17 @@ const LoginScreen = props => {
         password,
       }),
     };
-    fetch('https://api.heartsignalapp.com/users/login', fetchOptions)
-      .then(async res => {
+    fetch('http://10.0.2.2:3000/api/users/login', fetchOptions)
+      .then(async (res) => {
         const data = await res.json();
-        if (data.status !== 200) {
-          alert('이메일과 비밀번호를 확인해주세요.');
+        if (res.status !== 200) {
+          alert(data.msg);
           return;
         }
-        User.setUser(
-          data.data.token,
-          data.data.name,
-          data.data.phone,
-          data.data.intro,
-        );
-        props.navigation.reset({index: 0, routes: {name: 'Main'}});
+        Users.setUser(data.token, data.name, data.phone);
+        props.navigation.reset({index: 0, routes: [{name: 'Main'}]});
       })
-      .catch(err => {
+      .catch((err) => {
         alert('서버에서 답을 받아오지 못했어요.');
         console.log(err);
       });
@@ -112,7 +106,8 @@ const LoginScreen = props => {
       <Button onPress={login}>
         <ButtonText>로그인</ButtonText>
       </Button>
-      <TransparentButton onPress={() => props.navigation.navigate('RegisterScreen')}>
+      <TransparentButton
+        onPress={() => props.navigation.navigate('RegisterScreen')}>
         <ClickableText>아직 계정이 없으신가요?</ClickableText>
       </TransparentButton>
     </Container>

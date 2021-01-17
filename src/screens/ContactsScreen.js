@@ -1,7 +1,11 @@
-import React, {useState} from 'react';
-import {View, Text} from 'react-native';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components/native';
-import Contacts from '../components/Contacts';
+import {SearchBar} from 'react-native-elements';
+import {View, Text} from 'react-native';
+import {PermissionsAndroid} from 'react-native';
+import Contacts from 'react-native-contacts';
+
+import Contact from '../components/Contacts';
 
 const Container = styled.View`
   flex: 1;
@@ -17,34 +21,42 @@ const SearchView = styled.View`
   margin-bottom: 30px;
 `;
 
-const TextInput = styled.TextInput`
-  flex: 1;
-  height: 40px;
-  padding: 2px 20px 2px 20px;
-  border-radius: 20px;
-  border: 4px solid tomato;
-`;
-
 const ContactsView = styled.FlatList`
   flex: 1;
   width: 100%;
   background-color: white;
 `;
 
-const ContactsScreen = props => {
-  const [contacts, setContacts] = useState([
-    {id: '1', name: '홍길동', phone: '01011111111'},
-    {id: '2', name: '임꺽정', phone: '01011111111'},
-    {id: '3', name: '팽동은', phone: '01011111111'},
-  ]);
-
+const ContactsScreen = (props) => {
+  const [contacts, setContacts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = txt => {
+  const getContacts = () => {
+    PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.READ_CONTACTS, {
+      title: 'Contacts',
+      message: 'This app would like to view your contacts.',
+      buttonPositive: 'Please accept bare mortal',
+    }).then(async () => {
+      const allContacts = await Contacts.getAll();
+      const trimmedContacts = allContacts.map((contact) => ({
+        id: contact.recordID,
+        name: contact.displayName,
+        phone: contact.phoneNumbers[0]?.number.replace(/-/g, ''),
+      }));
+      setContacts(trimmedContacts);
+    });
+  };
+
+  useEffect(() => {
+    getContacts();
+  }, []);
+
+  const handleSearch = (txt) => {
     setSearchTerm(txt);
   };
+
   const renderItem = ({item}) => (
-    <Contacts
+    <Contact
       name={item.name}
       phone={item.phone}
       onPress={() => {
@@ -56,18 +68,31 @@ const ContactsScreen = props => {
     />
   );
 
+  const filteredContacts = contacts.filter((contact) =>
+    contact.name.includes(searchTerm),
+  );
+
   return (
     <Container>
       <SearchView>
-        <TextInput
+        <SearchBar
+          inputStyle={{backgroundColor: 'transparent'}}
+          inputContainerStyle={{backgroundColor: '#E5E5EA'}}
+          containerStyle={{
+            backgroundColor: 'white',
+            borderTopColor: 'transparent',
+            borderBottomColor: 'transparent',
+          }}
+          round={true}
           placeholder="누구에게 시그널을 보낼까요?"
           onChangeText={handleSearch}
+          value={searchTerm}
         />
       </SearchView>
       <ContactsView
-        data={contacts} // TODO: change to filteredContacts
+        data={filteredContacts}
         renderItem={renderItem}
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
       />
     </Container>
   );

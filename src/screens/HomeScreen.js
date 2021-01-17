@@ -1,5 +1,3 @@
-// TODO: improve
-
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components/native';
 import {PermissionsAndroid} from 'react-native';
