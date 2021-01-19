@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components/native';
-import {PermissionsAndroid} from 'react-native';
-import Contacts from 'react-native-contacts';
+import {StyleSheet} from 'react-native';
 
 const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: #fff7f5;
 `;
 
 const SearchView = styled.View`
@@ -18,27 +17,30 @@ const SearchView = styled.View`
 
 const TextInput = styled.TextInput`
   flex: 1;
-  height: 40px;
-  padding: 2px 20px;
-  border-radius: 20px;
-  border: 4px solid tomato;
 `;
 
-const HomeScreen = props => {
-  const [contacts, setContacts] = useState([]);
-  const getContacts = async () => {
-    setContacts(['Test']);
-  };
+const styles = StyleSheet.create({
+  textInput: {
+    borderRadius: 5000,
+    fontWeight: 'bold',
+    height: 70,
+    paddingTop: 2,
+    paddingBottom: 2,
+    paddingLeft: 20,
+    paddingRight: 20,
+    backgroundColor: '#ffffff',
+    elevation: 2,
+  },
+});
 
-  useEffect(() => {
-    getContacts();
-  }, []);
-
+const HomeScreen = (props) => {
   return (
     <Container>
       <SearchView>
         <TextInput
-          placeholder="시그널 보내기~!"
+          style={styles.textInput}
+          placeholderTextColor="gray"
+          placeholder="시그널 보내기"
           onTouchStart={() => {
             props.navigation.navigate('ContactsScreen');
           }}

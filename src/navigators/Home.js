@@ -8,7 +8,7 @@ import SendSignalScreen from '../screens/SendSignalScreen';
 const Stack = createStackNavigator();
 
 const Home = () => (
-  <Stack.Navigator>
+  <Stack.Navigator screenOptions={{headerTransparent: true}}>
     <Stack.Screen
       options={{title: '홈'}}
       name="HomeScreen"
