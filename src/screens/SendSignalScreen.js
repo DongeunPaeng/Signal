@@ -44,6 +44,7 @@ const SubMessageDesc = styled.Text`
 `;
 
 const MessageInput = styled.TextInput`
+  color: white;
   width: 100%;
   height: 50px;
   border: 0.3px solid white;

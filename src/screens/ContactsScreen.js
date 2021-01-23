@@ -74,6 +74,7 @@ const ContactsScreen = (props) => {
     <Container>
       <SearchView>
         <SearchBar
+          color="white"
           searchIcon={null}
           inputStyle={{
             textAlign: 'center',
@@ -102,6 +103,7 @@ const ContactsScreen = (props) => {
           }}
           placeholder="SEARCH"
           placeholderTextColor="white"
+          clearIcon={null}
           onChangeText={handleSearch}
           value={searchTerm}
         />
