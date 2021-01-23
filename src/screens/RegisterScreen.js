@@ -1,26 +1,29 @@
 import React, {useState} from 'react';
-import Users from '../stores/Users';
 import styled from 'styled-components/native';
+
+import {validateEmail, validatePassword} from '../utils/validator';
 
 const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: flex-start;
   padding: 50px;
-  background-color: white;
 `;
 
 const Text = styled.Text`
+  font-weight: bold;
   font-size: 15px;
   margin-bottom: 10px;
+  color: white;
 `;
 
 const EmailInput = styled.TextInput`
-  flex: 4;
+  flex: 3;
   height: 50px;
   padding-bottom: 10px;
-  border-bottom-width: 1px;
-  border-bottom-color: tomato;
+  border-bottom-width: 0.5px;
+  border-bottom-color: white;
+  elevation: 50;
 `;
 
 const Wrapper = styled.View`
@@ -33,28 +36,31 @@ const CheckButton = styled.TouchableOpacity`
   flex: 1;
   height: 50px;
   margin-left: 5px;
-  padding: 5px;
-  border: 1px solid tomato;
-  border-radius: 10px;
+  padding: 10px;
+  border-radius: 30px;
   justify-content: center;
   align-items: center;
   align-self: flex-end;
+  background-color: rgba(255, 255, 255, 0.3)
+  elevation: 50;
 `;
 
 const PasswordInput = styled.TextInput`
   width: 100%;
   height: 50px;
   padding-bottom: 10px;
-  border-bottom-width: 1px;
-  border-bottom-color: tomato;
+  border-bottom-width: 0.5px;
+  border-bottom-color: white;
   margin-bottom: 20px;
+  elevation: 50;
 `;
 
 const Button = styled.TouchableOpacity`
   align-self: center;
   width: 150px;
   height: 50px;
-  background-color: tomato;
+  background-color: rgba(255, 255, 255, 0.3);
+  elevation: 30;
   border-radius: 25px;
   margin-top: 30px;
   margin-bottom: 15px;
@@ -64,10 +70,15 @@ const Button = styled.TouchableOpacity`
 
 const ButtonText = styled.Text`
   color: white;
-  font-size: 17px;
+  font-weight: bold;
+  font-size: 20px;
 `;
 
-const CheckButtonText = styled.Text``;
+const CheckButtonText = styled.Text`
+  font-weight: bold;
+  color: white;
+  text-align: center;
+`;
 
 const RegisterScreen = (props) => {
   const [email, setEmail] = useState('');
@@ -76,6 +87,7 @@ const RegisterScreen = (props) => {
   const [isDuplicateChecked, setIsDuplicateChecked] = useState(false);
 
   const navigateToNextScreen = () => {
+    const isValidated = validatePassword(password);
     const fetchOptions = {
       method: 'POST',
       headers: {
@@ -94,6 +106,9 @@ const RegisterScreen = (props) => {
       return;
     } else if (password !== passwordCheck) {
       alert('비밀번호가 일치하지 않습니다.');
+      return;
+    } else if (!isValidated) {
+      alert('8자 이상 대소문자, 숫자, 특수문자 조합');
       return;
     } else {
       fetch('http://10.0.2.2:3000/api/users/try', fetchOptions)
@@ -115,6 +130,11 @@ const RegisterScreen = (props) => {
   const checkDuplicate = () => {
     if (!email) {
       alert('이메일을 입력해주세요.');
+      return;
+    }
+    const isValidated = validateEmail(email);
+    if (!isValidated) {
+      alert('형식이 올바르지 않습니다.');
       return;
     }
     const fetchOptions = {
@@ -159,6 +179,8 @@ const RegisterScreen = (props) => {
       <Text>이메일</Text>
       <Wrapper>
         <EmailInput
+          color="white"
+          placeholderTextColor="rgba(255, 255, 255, 0.3)"
           placeholder="이메일 입력"
           onChangeText={handleEmailChange}
         />
@@ -167,13 +189,18 @@ const RegisterScreen = (props) => {
         </CheckButton>
       </Wrapper>
       <Text>비밀번호</Text>
+
       <PasswordInput
-        placeholder="비밀번호 입력"
+        color="white"
+        placeholderTextColor="rgba(255, 255, 255, 0.3)"
+        placeholder="8자 이상 대소문자, 숫자, 특수문자 조합"
         onChangeText={handlePasswordChange}
         secureTextEntry={true}
       />
       <Text>비밀번호 확인</Text>
       <PasswordInput
+        color="white"
+        placeholderTextColor="rgba(255, 255, 255, 0.3)"
         placeholder="비밀번호 재입력"
         onChangeText={handlePasswordCheckChange}
         secureTextEntry={true}

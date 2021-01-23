@@ -15,13 +15,21 @@ const MyPage = (props) => {
     <Stack.Navigator screenOptions={{headerShown: true}}>
       <Stack.Screen
         options={{
-          title: '나의 시그널',
+          title: '',
+          headerStyle: {
+            backgroundColor: 'transparent',
+            elevation: 0,
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
           headerRight: () => (
             <Ionicons
               size={20}
               style={{marginRight: 15}}
               name="settings"
-              color="tomato"
+              color="white"
               onPress={handleSettingsClick}
             />
           ),
@@ -30,7 +38,17 @@ const MyPage = (props) => {
         component={MySignalScreen}
       />
       <Stack.Screen
-        options={{title: '설정'}}
+        options={{
+          title: '설정',
+          headerStyle: {
+            backgroundColor: 'transparent',
+            elevation: 0,
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
         name="SettingsScreen"
         component={SettingsScreen}
       />

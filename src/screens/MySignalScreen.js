@@ -8,7 +8,6 @@ const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: flex-start;
-  background-color: white;
 `;
 const ProfileView = styled.View`
   height: 150px;
@@ -25,35 +24,25 @@ const InfoView = styled.View`
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
 const NameTxt = styled.Text`
-  text-transform: uppercase;
   font-weight: bold;
-  font-size: 16px;
+  text-transform: uppercase;
+  font-size: 25px;
+  color: white;
 `;
 
-const PhoneTxt = styled.Text``;
-
-const ProfileImgView = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-`;
-
-const ProfileImg = styled.Image`
-  width: 100px;
-  height: 100px;
-  background-color: #eef3f3;
-  border-radius: 50px;
+const PhoneTxt = styled.Text`
+  font-size: 40px;
+  color: white;
 `;
 
 const SignalView = styled.View`
   width: 100%;
   flex: 1;
-  background-color: red;
+  background-color: transparent;
 `;
 
 const MySignalScreen = () => (
@@ -61,16 +50,10 @@ const MySignalScreen = () => (
     <ProfileView>
       <ProfileTxtView>
         <InfoView>
-          <NameTxt>{Users.name}</NameTxt>
-          <PhoneTxt>{Users.phone}</PhoneTxt>
+          <NameTxt>{Users.name}님,</NameTxt>
+          <PhoneTxt>반가워요.</PhoneTxt>
         </InfoView>
       </ProfileTxtView>
-      <ProfileImgView>
-        <ProfileImg
-          source={{uri: 'https://randomuser.me/api/portraits/men/9.jpg'}}
-          resizeMode="contain"
-        />
-      </ProfileImgView>
     </ProfileView>
     <SignalView>
       <SignalTab />

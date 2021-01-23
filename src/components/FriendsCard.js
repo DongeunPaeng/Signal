@@ -3,10 +3,9 @@ import styled from 'styled-components/native';
 import CardView from 'react-native-cardview';
 
 const Container = styled.TouchableOpacity`
-  height: 80px;
-  flex-direction: row;
-  margin: 15px 15px 0 15px;
-  background-color: white;
+  margin: 20px 10px 0px 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
 `;
 const TxtView = styled.View`
   flex: 1;
@@ -14,17 +13,17 @@ const TxtView = styled.View`
 `;
 
 const MsgTextView = styled.View`
-  margin-top: 10px;
-  flex-direction: column;
-  align-items: flex-start;
+  padding: 15px;
 `;
 
 const MsgText = styled.Text`
+  color: white;
+  font-weight: bold;
   font-size: 14px;
 `;
 const FriendsCard = ({name, phone}) => {
   return (
-    <CardView cardElevation={2} cardMaxElevation={2} cornerRadius={10}>
+    <CardView style={{backgroundColor: 'transparent'}} cardElevation={0} cardMaxElevation={0} cornerRadius={10}>
       <Container>
         <TxtView>
           <MsgTextView>

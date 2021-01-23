@@ -11,9 +11,21 @@ const SignalTab = () => {
   return (
     <Tab.Navigator
       tabBarOptions={{
-        indicatorStyle: {
-          backgroundColor: 'tomato',
+        style: {
+          backgroundColor: 'rgba(255, 255, 255, 0.0)',
+          elevation: 0,
+          borderBottomColor: 'white',
+          borderBottomWidth: 1,
         },
+        indicatorStyle: {
+          backgroundColor: 'rgba(255, 255, 255, 0.3)',
+          height: 50,
+        },
+        labelStyle: {
+          fontWeight: 'bold',
+        },
+        activeTintColor: 'white',
+        inactiveTintColor: 'white',
       }}>
       <Tab.Screen name="보낸 시그널" component={SentSignals} />
       <Tab.Screen name="받은 시그널" component={ReceivedSignals} />

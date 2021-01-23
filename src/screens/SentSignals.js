@@ -10,13 +10,11 @@ const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: white;
 `;
 
 const SignalList = styled.FlatList`
   flex: 1;
   width: 100%;
-  background-color: white;
 `;
 
 const SentSignals = (props) => {
@@ -65,7 +63,7 @@ const SentSignals = (props) => {
           keyExtractor={(item) => item.id.toString()}
         />
       ) : (
-        <Text>시그널을 보내보세요!</Text>
+        <Text style={{color: 'white'}}>시그널을 보내보세요!</Text>
       )}
     </Container>
   );

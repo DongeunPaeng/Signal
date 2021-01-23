@@ -8,28 +8,31 @@ const Container = styled.View`
   justify-content: center;
   align-items: flex-start;
   padding: 50px;
-  background-color: white;
 `;
 
 const Text = styled.Text`
+  font-weight: bold;
   font-size: 15px;
   margin-bottom: 10px;
+  color: white;
 `;
 
 const TextInput = styled.TextInput`
   width: 100%;
   height: 50px;
   padding-bottom: 10px;
-  border-bottom-width: 1px;
-  border-bottom-color: tomato;
+  border-bottom-width: 0.5px;
+  border-bottom-color: white;
   margin-bottom: 20px;
+  elevation: 50;
 `;
 
 const Button = styled.TouchableOpacity`
   align-self: center;
   width: 150px;
   height: 50px;
-  background-color: tomato;
+  background-color: rgba(255, 255, 255, 0.3);
+  elevation: 30;
   border-radius: 25px;
   margin-top: 30px;
   margin-bottom: 15px;
@@ -39,7 +42,8 @@ const Button = styled.TouchableOpacity`
 
 const ButtonText = styled.Text`
   color: white;
-  font-size: 17px;
+  font-weight: bold;
+  font-size: 20px;
 `;
 
 const TransparentButton = styled.TouchableOpacity`
@@ -47,7 +51,8 @@ const TransparentButton = styled.TouchableOpacity`
 `;
 
 const ClickableText = styled.Text`
-  text-decoration = underline;
+  color: white;
+  margin-top: 10px;
 `;
 
 const LoginScreen = (props) => {
@@ -96,10 +101,17 @@ const LoginScreen = (props) => {
   return (
     <Container>
       <Text>이메일</Text>
-      <TextInput placeholder="이메일 입력" onChangeText={handleEmailChange} />
+      <TextInput
+        color="white"
+        placeholderTextColor="rgba(255, 255, 255, 0.3)"
+        placeholder="이메일 입력"
+        onChangeText={handleEmailChange}
+      />
       <Text>비밀번호</Text>
       <TextInput
+        color="white"
         placeholder="비밀번호 입력"
+        placeholderTextColor="rgba(255, 255, 255, 0.3)"
         onChangeText={handlePasswordChange}
         secureTextEntry={true}
       />

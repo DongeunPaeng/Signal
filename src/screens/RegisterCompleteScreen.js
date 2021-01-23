@@ -7,12 +7,13 @@ const Container = styled.View`
   justify-content: center;
   align-items: flex-start;
   padding: 50px;
-  background-color: white;
 `;
 
 const Text = styled.Text`
+  font-weight: bold;
   font-size: 15px;
   margin-bottom: 10px;
+  color: white;
 `;
 
 const Wrapper = styled.View`
@@ -23,24 +24,28 @@ const Wrapper = styled.View`
 
 const TextInput = styled.TextInput`
   padding-bottom: 10px;
-  border-bottom-width: 1px
-  border-bottom-color: tomato;
-  flex: 4;
+  border-bottom-width: 0.5px
+  border-bottom-color: white;
+  flex: 3;
+  elevation: 50;
 `;
 
 const CheckButton = styled.TouchableOpacity`
   flex: 1;
   height: 50px;
   margin-left: 5px;
-  padding: 5px;
-  border: 1px solid tomato;
-  border-radius: 10px;
+  padding: 10px;
+  border-radius: 30px;
   justify-content: center;
   align-items: center;
   align-self: flex-end;
+  background-color: rgba(255, 255, 255, 0.3)
+  elevation: 50;
 `;
 
 const CheckButtonText = styled.Text`
+  font-weight: bold;
+  color: white;
   text-align: center;
 `;
 
@@ -48,7 +53,8 @@ const Button = styled.TouchableOpacity`
   align-self: center;
   width: 150px;
   height: 50px;
-  background-color: tomato;
+  background-color: rgba(255, 255, 255, 0.3);
+  elevation: 30;
   border-radius: 25px;
   margin-top: 30px;
   margin-bottom: 15px;
@@ -58,7 +64,8 @@ const Button = styled.TouchableOpacity`
 
 const ButtonText = styled.Text`
   color: white;
-  font-size: 17px;
+  font-weight: bold;
+  font-size: 20px;
 `;
 
 const RegisterCompleteScreen = (props) => {
@@ -97,10 +104,15 @@ const RegisterCompleteScreen = (props) => {
       }),
     };
     fetch('http://10.0.2.2:3000/api/users/send-auth', fetchOptions)
-      .then((res) => {
+      .then(async (res) => {
         if (res.status === 200) {
-          setIsAuthSent(true);
-          alert('인증번호를 1분 내로 입력해주세요');
+          const data = await res.json();
+          if (data.isDuplicate) {
+            alert('사용 중인 휴대전화입니다.');
+          } else {
+            setIsAuthSent(true);
+            alert('인증번호를 1분 내로 입력해주세요');
+          }
         }
       })
       .catch((err) => {
@@ -180,21 +192,36 @@ const RegisterCompleteScreen = (props) => {
     <Container>
       <Text>전화번호</Text>
       <Wrapper>
-        <TextInput placeholder="01012345678" onChangeText={handlePhoneChange} />
+        <TextInput
+          color="white"
+          placeholderTextColor="rgba(255, 255, 255, 0.3)"
+          placeholder="01012345678"
+          onChangeText={handlePhoneChange}
+        />
         <CheckButton onPress={requestAuthCode}>
           <CheckButtonText>인증번호 발송</CheckButtonText>
         </CheckButton>
       </Wrapper>
       <Text>인증번호</Text>
       <Wrapper>
-        <TextInput placeholder="1234" onChangeText={handleAuthCodeChange} />
+        <TextInput
+          color="white"
+          placeholderTextColor="rgba(255, 255, 255, 0.3)"
+          placeholder="1234"
+          onChangeText={handleAuthCodeChange}
+        />
         <CheckButton onPress={checkAuthCode}>
           <CheckButtonText>인증번호 확인</CheckButtonText>
         </CheckButton>
       </Wrapper>
       <Text>이름</Text>
       <Wrapper>
-        <TextInput placeholder="홍길동" onChangeText={handleNameChange} />
+        <TextInput
+          color="white"
+          placeholderTextColor="rgba(255, 255, 255, 0.3)"
+          placeholder="홍길동"
+          onChangeText={handleNameChange}
+        />
       </Wrapper>
       <Button onPress={register}>
         <ButtonText>가입완료</ButtonText>

@@ -6,7 +6,6 @@ import Users from '../stores/Users';
 
 const Container = styled.View`
   flex: 1;
-  background-color: white;
 `;
 
 const ReceiverView = styled.View`
@@ -17,11 +16,13 @@ const ReceiverView = styled.View`
 const NameTxt = styled.Text`
   font-size: 20px;
   margin-bottom: 5px;
-  color: #333;
+  margin-top: 15px;
+  color: white;
 `;
 
 const PhoneTxt = styled.Text`
   font-size: 15px;
+  color: white;
 `;
 
 const MessageView = styled.View`
@@ -32,22 +33,24 @@ const MessageView = styled.View`
 
 const MessageDesc = styled.Text`
   align-self: flex-start;
-  color: #333;
+  color: white;
 `;
 
 const SubMessageDesc = styled.Text`
   align-self: flex-start;
   font-size: 12px;
   margin-bottom: 20px;
-  color: #999;
+  color: white;
 `;
 
 const MessageInput = styled.TextInput`
   width: 100%;
   height: 50px;
-  border: 1px solid tomato;
+  border: 0.3px solid white;
   border-radius: 5px;
   padding: 10px;
+  background-color: 'rgba(255, 255, 255, 0.1)'
+  elevation: 50;
 `;
 
 const BtnView = styled.View`
@@ -58,19 +61,20 @@ const BtnView = styled.View`
 
 const Button = styled.TouchableOpacity`
   align-self: center;
-  width: 150px;
-  height: 50px;
-  background-color: tomato;
+  width: 250px;
+  height: 40px;
+  background-color: 'rgba(255, 255, 255, 0.3)';
   border-radius: 25px;
-  margin-top: 30px;
   margin-bottom: 15px;
   justify-content: center;
   align-items: center;
+  elevation: 40;
 `;
 
 const ButtonText = styled.Text`
   color: white;
-  font-size: 17px;
+  font-size: 20px;
+  font-weight: bold;
 `;
 
 const SendSignalScreen = (props) => {

@@ -6,10 +6,10 @@ const Container = styled.View`
   justify-content: center;
   align-items: center;
   padding: 50px;
-  background-color: white;
 `;
 
 const Text = styled.Text`
+  color: white;
   font-size: 15px;
   margin-bottom: 10px;
 `;

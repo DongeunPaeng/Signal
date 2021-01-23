@@ -34,17 +34,37 @@ const Login = (props) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        options={{title: '로그인'}}
+        options={{headerShown: false}}
         name="LoginScreen"
         component={LoginScreen}
       />
       <Stack.Screen
-        options={{title: '회원가입'}}
+        options={{
+          title: '회원가입',
+          headerStyle: {
+            backgroundColor: 'transparent',
+            elevation: 0,
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
         name="RegisterScreen"
         component={RegisterScreen}
       />
       <Stack.Screen
-        options={{title: '회원가입'}}
+        options={{
+          title: '회원가입',
+          headerStyle: {
+            backgroundColor: 'transparent',
+            elevation: 0,
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
         name="RegisterCompleteScreen"
         component={RegisterCompleteScreen}
       />

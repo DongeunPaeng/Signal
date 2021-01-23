@@ -6,50 +6,39 @@ const Container = styled.TouchableOpacity`
   height: 80px;
   flex-direction: row;
   margin: 10px;
-`
-
-const IconView = styled.View`
-  width: 100px;
-  justify-content: center;
-  align-items: center;
-`
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+`;
 
 const TxtView = styled.View`
+  margin-left: 20px;
   flex: 1;
-  justify-content: flex-start;
-`
+  justify-content: center;
+  align-items: flex-start;
+  background-color: transparent;
+`;
 
 const NameText = styled.Text`
+  color: white;
   font-size: 20px;
-  margin-top: 10px;
-`
+`;
 
 const PhoneText = styled.Text`
-  font-size: 16px;
-  margin-top: 10px;
-`
-
-const Line = styled.View`
-  width: 100%;
-  border-bottom-color: #333;
-  border-bottom-width: 1px;
-`
+  color: white;
+  font-size: 12px;
+`;
 
 const Contact = (props) => {
   return (
     <>
-    <Container onPress={props.onPress}>
-      <IconView>
-        <Ionicons name="call" size={20} color="tomato" />
-      </IconView>
-      <TxtView>
-        <NameText>{props.name}</NameText>
-        <PhoneText>{props.phone}</PhoneText>
-      </TxtView>
-    </Container>
-    <Line />
+      <Container onPress={props.onPress}>
+        <TxtView>
+          <NameText>{props.name}</NameText>
+          <PhoneText>{props.phone}</PhoneText>
+        </TxtView>
+      </Container>
     </>
-  )
-}
+  );
+};
 
 export default Contact;

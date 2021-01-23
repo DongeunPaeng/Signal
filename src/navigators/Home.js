@@ -8,19 +8,19 @@ import SendSignalScreen from '../screens/SendSignalScreen';
 const Stack = createStackNavigator();
 
 const Home = () => (
-  <Stack.Navigator screenOptions={{headerTransparent: true}}>
+  <Stack.Navigator screenOptions={{headerShown: false}}>
     <Stack.Screen
-      options={{title: '홈'}}
+      // options={{title: '홈', headerTitleStyle: {color: 'tomato', fontWeight: 'bold'}}}
       name="HomeScreen"
       component={HomeScreen}
     />
     <Stack.Screen
-      options={{title: '수신자 선택'}}
+      // options={{title: '수신자 선택'}}
       name="ContactsScreen"
       component={ContactsScreen}
     />
     <Stack.Screen
-      options={{title: '시그널 보내기'}}
+      // options={{title: '시그널 보내기'}}
       name="SendSignalScreen"
       component={SendSignalScreen}
     />

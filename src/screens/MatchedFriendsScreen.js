@@ -10,13 +10,11 @@ const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: white;
 `;
 
 const SignalList = styled.FlatList`
   flex: 1;
   width: 100%;
-  background-color: white;
 `;
 
 const MatchedFriendsScreen = () => {
@@ -60,7 +58,7 @@ const MatchedFriendsScreen = () => {
           keyExtractor={(item) => item.id.toString()}
         />
       ) : (
-        <Text>이어진 친구가 없어요</Text>
+        <Text style={{color: 'white'}}>이어진 친구가 없어요</Text>
       )}
     </Container>
   );

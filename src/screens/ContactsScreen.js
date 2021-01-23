@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components/native';
 import {SearchBar} from 'react-native-elements';
-import {View, Text} from 'react-native';
-import {PermissionsAndroid} from 'react-native';
+import {StyleSheet, PermissionsAndroid} from 'react-native';
 import Contacts from 'react-native-contacts';
 
 import Contact from '../components/Contacts';
@@ -11,7 +10,7 @@ const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: transparent;
 `;
 
 const SearchView = styled.View`
@@ -24,7 +23,6 @@ const SearchView = styled.View`
 const ContactsView = styled.FlatList`
   flex: 1;
   width: 100%;
-  background-color: white;
 `;
 
 const ContactsScreen = (props) => {
@@ -76,15 +74,34 @@ const ContactsScreen = (props) => {
     <Container>
       <SearchView>
         <SearchBar
-          inputStyle={{backgroundColor: 'transparent'}}
-          inputContainerStyle={{backgroundColor: '#E5E5EA'}}
+          searchIcon={null}
+          inputStyle={{
+            textAlign: 'center',
+            fontWeight: 'bold',
+            backgroundColor: 'transparent',
+          }}
+          inputContainerStyle={{
+            backgroundColor: 'transparent',
+            height: 15,
+            paddingBottom: 10,
+          }}
           containerStyle={{
-            backgroundColor: 'white',
+            borderRadius: 5000,
+            marginTop: 10,
+            backgroundColor: 'rgba(255, 255, 255, 0.3)',
             borderTopColor: 'transparent',
             borderBottomColor: 'transparent',
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 12,
+            },
+            shadowOpacity: 0.58,
+            shadowRadius: 16.0,
+            elevation: 50,
           }}
-          round={true}
-          placeholder="누구에게 시그널을 보낼까요?"
+          placeholder="SEARCH"
+          placeholderTextColor="white"
           onChangeText={handleSearch}
           value={searchTerm}
         />
