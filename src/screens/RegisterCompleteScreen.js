@@ -104,10 +104,9 @@ const RegisterCompleteScreen = (props) => {
       }),
     };
     fetch('https://heartsignal.dev/api/users/send-auth', fetchOptions)
-      .then(async (res) => {
+      .then((res) => {
         if (res.status === 200) {
-          const data = await res.json();
-          if (data.isDuplicate) {
+          if (res.isDuplicate) {
             alert('사용 중인 휴대전화입니다.');
           } else {
             setIsAuthSent(true);
@@ -115,10 +114,7 @@ const RegisterCompleteScreen = (props) => {
           }
         }
       })
-      .catch((err) => {
-        console.log(err);
-        alert(err);
-      });
+      .catch((err) => alert(err));
   };
 
   const checkAuthCode = () => {
