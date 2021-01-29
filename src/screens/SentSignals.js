@@ -29,7 +29,7 @@ const SentSignals = (props) => {
         authorization: 'bearer ' + Users.token,
       },
     };
-    fetch('http://10.0.2.2:3000/api/users/sent-signals', fetchOptions)
+    fetch('https://heartsignal.dev/api/users/sent-signals', fetchOptions)
       .then(async (res) => {
         const data = await res.json();
         if (res.status === 200) {

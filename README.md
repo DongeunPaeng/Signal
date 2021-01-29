@@ -6,3 +6,4 @@
 - [x] Make Header section white.
 - [x] Beautify check-duplicate button.
 - [x] Add password, name, email validator.
+- [x] Update api calls with the new remote server address.

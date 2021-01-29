@@ -103,7 +103,7 @@ const RegisterCompleteScreen = (props) => {
         phone,
       }),
     };
-    fetch('http://10.0.2.2:3000/api/users/send-auth', fetchOptions)
+    fetch('https://heartsignal.dev/api/users/send-auth', fetchOptions)
       .then(async (res) => {
         if (res.status === 200) {
           const data = await res.json();
@@ -139,7 +139,7 @@ const RegisterCompleteScreen = (props) => {
         authCode,
       }),
     };
-    fetch('http://10.0.2.2:3000/api/users/check-auth', fetchOptions)
+    fetch('https://heartsignal.dev/api/users/check-auth', fetchOptions)
       .then((res) => {
         if (res.status !== 200) {
           alert('인증 실패');
@@ -176,7 +176,7 @@ const RegisterCompleteScreen = (props) => {
         name,
       }),
     };
-    fetch('http://10.0.2.2:3000/api/users/', fetchOptions)
+    fetch('https://heartsignal.dev/api/users/', fetchOptions)
       .then(async (res) => {
         const data = await res.json();
         Users.setUser(data.token, data.name, data.phone);

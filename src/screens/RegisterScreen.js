@@ -111,7 +111,7 @@ const RegisterScreen = (props) => {
       alert('8자 이상 대소문자, 숫자, 특수문자 조합');
       return;
     } else {
-      fetch('http://10.0.2.2:3000/api/users/try', fetchOptions)
+      fetch('https://heartsignal.dev/api/users/try', fetchOptions)
         .then((res) => {
           if (res.status === 200) {
             props.navigation.navigate('RegisterCompleteScreen', {
@@ -146,7 +146,7 @@ const RegisterScreen = (props) => {
         email,
       }),
     };
-    fetch('http://10.0.2.2:3000/api/users/check-duplicate', fetchOptions)
+    fetch('https://heartsignal.dev/api/users/check-duplicate', fetchOptions)
       .then(async (res) => {
         const data = await res.json();
         if (data.isDuplicate) {

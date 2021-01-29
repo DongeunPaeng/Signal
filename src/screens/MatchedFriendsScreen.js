@@ -29,7 +29,7 @@ const MatchedFriendsScreen = () => {
         authorization: 'bearer ' + Users.token,
       },
     };
-    fetch('http://10.0.2.2:3000/api/users/matched-friends', fetchOptions)
+    fetch('https://heartsignal.dev/api/users/matched-friends', fetchOptions)
       .then(async (res) => {
         const data = await res.json();
         if (res.status === 200) {

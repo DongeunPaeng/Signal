@@ -100,7 +100,7 @@ const SendSignalScreen = (props) => {
         msg,
       }),
     };
-    fetch('http://10.0.2.2:3000/api/users/send-signal', fetchOptions)
+    fetch('https://heartsignal.dev/api/users/send-signal', fetchOptions)
       .then(async(res) => {
         if (res.status !== 200) {
           alert('서버에서 답이 이상하게 왔어요.');

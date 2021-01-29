@@ -82,7 +82,7 @@ const LoginScreen = (props) => {
         password,
       }),
     };
-    fetch('http://10.0.2.2:3000/api/users/login', fetchOptions)
+    fetch('https://heartsignal.dev/api/users/login', fetchOptions)
       .then(async (res) => {
         const data = await res.json();
         if (res.status !== 200) {
