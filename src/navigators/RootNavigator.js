@@ -1,6 +1,5 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Text} from 'react-native';
 
 import Main from '../navigators/Main';
 import Login from '../navigators/Login';
