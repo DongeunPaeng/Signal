@@ -17,3 +17,4 @@
 - [x] FEEDBACK: prevent uppercase everywhere.
 - [ ] Prepare publishing.
     - [ ] Make Screenshots.
+    - [ ] Make Splash Image.
