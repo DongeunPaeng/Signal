@@ -5,7 +5,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import RootNavigator from './src/navigators/RootNavigator';
 
-const MyTheme = {
+const mainTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
@@ -20,21 +20,18 @@ const App = () => (
       translucent
       backgroundColor="transparent"
     />
-    <LinearGradient
-      style={{
-        flex: 1,
-        backgroundColor: 'green',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-      colors={['#ff0f7b', '#f89b29']}>
-      <SafeAreaView
-        style={{flex: 1, width: '100%', backgroundColor: 'transparent'}}>
-        <NavigationContainer theme={MyTheme}>
+    <SafeAreaView
+      style={{flex: 1, width: '100%', backgroundColor: 'transparent'}}>
+      <LinearGradient
+        colors={['#ff0f7b', '#f89b29']}
+        style={{
+          flex: 1,
+        }}>
+        <NavigationContainer theme={mainTheme}>
           <RootNavigator />
         </NavigationContainer>
-      </SafeAreaView>
-    </LinearGradient>
+      </LinearGradient>
+    </SafeAreaView>
   </>
 );
 
