@@ -40,9 +40,10 @@ const Login = (props) => {
       />
       <Stack.Screen
         options={{
+          cardOverlayEnabled: false,
           title: '회원가입',
           headerStyle: {
-            backgroundColor: 'transparent',
+            backgroundColor: '#ff0f7b',
             elevation: 0,
           },
           headerTintColor: 'white',
@@ -55,9 +56,10 @@ const Login = (props) => {
       />
       <Stack.Screen
         options={{
+          cardOverlayEnabled: false,
           title: '회원가입',
           headerStyle: {
-            backgroundColor: 'transparent',
+            backgroundColor: '#ff0f7b',
             elevation: 0,
           },
           headerTintColor: 'white',

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components/native';
 
 import {validateEmail, validatePassword} from '../utils/validator';
+import LinearGradientWrapper from '../wrappers/LinearGradientWrapper';
 
 const Container = styled.View`
   flex: 1;
@@ -175,40 +176,42 @@ const RegisterScreen = (props) => {
   };
 
   return (
-    <Container>
-      <Text>이메일</Text>
-      <Wrapper>
-        <EmailInput
+    <LinearGradientWrapper>
+      <Container>
+        <Text>이메일</Text>
+        <Wrapper>
+          <EmailInput
+            color="white"
+            placeholderTextColor="rgba(255, 255, 255, 0.3)"
+            placeholder="이메일 입력"
+            onChangeText={handleEmailChange}
+          />
+          <CheckButton onPress={checkDuplicate}>
+            <CheckButtonText>중복확인</CheckButtonText>
+          </CheckButton>
+        </Wrapper>
+        <Text>비밀번호</Text>
+
+        <PasswordInput
           color="white"
           placeholderTextColor="rgba(255, 255, 255, 0.3)"
-          placeholder="이메일 입력"
-          onChangeText={handleEmailChange}
+          placeholder="8자 이상 대소문자, 숫자, 특수문자 조합"
+          onChangeText={handlePasswordChange}
+          secureTextEntry={true}
         />
-        <CheckButton onPress={checkDuplicate}>
-          <CheckButtonText>중복확인</CheckButtonText>
-        </CheckButton>
-      </Wrapper>
-      <Text>비밀번호</Text>
-
-      <PasswordInput
-        color="white"
-        placeholderTextColor="rgba(255, 255, 255, 0.3)"
-        placeholder="8자 이상 대소문자, 숫자, 특수문자 조합"
-        onChangeText={handlePasswordChange}
-        secureTextEntry={true}
-      />
-      <Text>비밀번호 확인</Text>
-      <PasswordInput
-        color="white"
-        placeholderTextColor="rgba(255, 255, 255, 0.3)"
-        placeholder="비밀번호 재입력"
-        onChangeText={handlePasswordCheckChange}
-        secureTextEntry={true}
-      />
-      <Button onPress={navigateToNextScreen}>
-        <ButtonText>확인</ButtonText>
-      </Button>
-    </Container>
+        <Text>비밀번호 확인</Text>
+        <PasswordInput
+          color="white"
+          placeholderTextColor="rgba(255, 255, 255, 0.3)"
+          placeholder="비밀번호 재입력"
+          onChangeText={handlePasswordCheckChange}
+          secureTextEntry={true}
+        />
+        <Button onPress={navigateToNextScreen}>
+          <ButtonText>확인</ButtonText>
+        </Button>
+      </Container>
+    </LinearGradientWrapper>
   );
 };
 

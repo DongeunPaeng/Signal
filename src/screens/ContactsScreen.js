@@ -5,6 +5,7 @@ import {StyleSheet, PermissionsAndroid} from 'react-native';
 import Contacts from 'react-native-contacts';
 
 import Contact from '../components/Contacts';
+import LinearGradientWrapper from '../wrappers/LinearGradientWrapper';
 
 const Container = styled.View`
   flex: 1;
@@ -66,54 +67,56 @@ const ContactsScreen = (props) => {
     />
   );
 
-  const filteredContacts = contacts.filter((contact) =>
-    contact.name.includes(searchTerm),
+  const filteredContacts = contacts.filter(
+    (contact) => contact.name && contact.name.includes(searchTerm),
   );
 
   return (
-    <Container>
-      <SearchView>
-        <SearchBar
-          color="white"
-          searchIcon={null}
-          inputStyle={{
-            textAlign: 'center',
-            fontWeight: 'bold',
-            backgroundColor: 'transparent',
-          }}
-          inputContainerStyle={{
-            backgroundColor: 'transparent',
-            height: 15,
-            paddingBottom: 10,
-          }}
-          containerStyle={{
-            borderRadius: 5000,
-            marginTop: 10,
-            backgroundColor: 'rgba(255, 255, 255, 0.3)',
-            borderTopColor: 'transparent',
-            borderBottomColor: 'transparent',
-            shadowColor: '#000',
-            shadowOffset: {
-              width: 0,
-              height: 12,
-            },
-            shadowOpacity: 0.58,
-            shadowRadius: 16.0,
-            elevation: 50,
-          }}
-          placeholder="SEARCH"
-          placeholderTextColor="white"
-          clearIcon={null}
-          onChangeText={handleSearch}
-          value={searchTerm}
+    <LinearGradientWrapper>
+      <Container>
+        <SearchView>
+          <SearchBar
+            color="white"
+            searchIcon={null}
+            inputStyle={{
+              textAlign: 'center',
+              fontWeight: 'bold',
+              backgroundColor: 'transparent',
+              justifyContent: 'center',
+              alignContent: 'center',
+            }}
+            inputContainerStyle={{
+              justifyContent: 'center',
+              alignContent: 'center',
+              backgroundColor: 'transparent',
+            }}
+            containerStyle={{
+              justifyContent: 'center',
+              alignContent: 'center',
+              borderRadius: 5000,
+              marginTop: 10,
+              backgroundColor: 'rgba(255, 255, 255, 0.3)',
+              borderTopColor: 'transparent',
+              borderBottomColor: 'transparent',
+              shadowColor: '#000',
+              shadowOpacity: 0.58,
+              shadowRadius: 16.0,
+              elevation: 50,
+            }}
+            placeholder="SEARCH"
+            placeholderTextColor="white"
+            clearIcon={null}
+            onChangeText={handleSearch}
+            value={searchTerm}
+          />
+        </SearchView>
+        <ContactsView
+          data={filteredContacts}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
         />
-      </SearchView>
-      <ContactsView
-        data={filteredContacts}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
-    </Container>
+      </Container>
+    </LinearGradientWrapper>
   );
 };
 

@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 import {Alert} from 'react-native';
 
 import Users from '../stores/Users';
+import LinearGradientWrapper from '../wrappers/LinearGradientWrapper';
 
 const Container = styled.View`
   flex: 1;
@@ -101,7 +102,7 @@ const SendSignalScreen = (props) => {
       }),
     };
     fetch('https://heartsignal.dev/api/users/send-signal', fetchOptions)
-      .then(async(res) => {
+      .then(async (res) => {
         if (res.status !== 200) {
           alert('서버에서 답이 이상하게 왔어요.');
         } else {
@@ -120,26 +121,28 @@ const SendSignalScreen = (props) => {
   };
 
   return (
-    <Container>
-      <ReceiverView>
-        <NameTxt>{props.route.params.name}</NameTxt>
-        <PhoneTxt>{props.route.params.phone}</PhoneTxt>
-      </ReceiverView>
-      <MessageView>
-        <MessageDesc>
-          수신자에게 보낼 메시지를 20자 이내로 입력해주세요.
-        </MessageDesc>
-        <SubMessageDesc>
-          *수신자가 비회원일 경우, 문자로 시그널이 보내집니다.
-        </SubMessageDesc>
-        <MessageInput onChangeText={handleTextChange} />
-      </MessageView>
-      <BtnView>
-        <Button onPress={sendSignal}>
-          <ButtonText>시그널 전송</ButtonText>
-        </Button>
-      </BtnView>
-    </Container>
+    <LinearGradientWrapper>
+      <Container>
+        <ReceiverView>
+          <NameTxt>{props.route.params.name}</NameTxt>
+          <PhoneTxt>{props.route.params.phone}</PhoneTxt>
+        </ReceiverView>
+        <MessageView>
+          <MessageDesc>
+            수신자에게 보낼 메시지를 20자 이내로 입력해주세요.
+          </MessageDesc>
+          <SubMessageDesc>
+            *수신자가 비회원일 경우, 문자로 시그널이 보내집니다.
+          </SubMessageDesc>
+          <MessageInput onChangeText={handleTextChange} />
+        </MessageView>
+        <BtnView>
+          <Button onPress={sendSignal}>
+            <ButtonText>시그널 전송</ButtonText>
+          </Button>
+        </BtnView>
+      </Container>
+    </LinearGradientWrapper>
   );
 };
 

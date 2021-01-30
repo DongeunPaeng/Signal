@@ -25,8 +25,7 @@ const App = () => (
       style={{
         flex: 1,
       }}>
-      <SafeAreaView
-        style={{flex: 1, width: '100%', backgroundColor: 'transparent'}}>
+      <SafeAreaView style={{flex: 1, width: '100%'}}>
         <NavigationContainer theme={mainTheme}>
           <RootNavigator />
         </NavigationContainer>

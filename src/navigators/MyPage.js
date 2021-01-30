@@ -15,6 +15,7 @@ const MyPage = (props) => {
     <Stack.Navigator screenOptions={{headerShown: true}}>
       <Stack.Screen
         options={{
+          cardOverlayEnabled: false,
           title: '',
           headerStyle: {
             backgroundColor: 'transparent',
@@ -33,15 +34,17 @@ const MyPage = (props) => {
               onPress={handleSettingsClick}
             />
           ),
+          cardOverlayEnabled: false,
         }}
         name="MySignalScreen"
         component={MySignalScreen}
       />
       <Stack.Screen
         options={{
+          cardOverlayEnabled: false,
           title: '설정',
           headerStyle: {
-            backgroundColor: 'transparent',
+            backgroundColor: '#ff0f7b',
             elevation: 0,
           },
           headerTintColor: 'white',

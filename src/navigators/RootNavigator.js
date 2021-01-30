@@ -12,8 +12,20 @@ const RootNavigator = () => (
     <Stack.Navigator
       initialRouteName={Users.token ? 'Main' : 'Login'}
       screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Main" component={Main} />
-      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen
+        options={{
+          cardOverlayEnabled: false,
+        }}
+        name="Main"
+        component={Main}
+      />
+      <Stack.Screen
+        options={{
+          cardOverlayEnabled: false,
+        }}
+        name="Login"
+        component={Login}
+      />
     </Stack.Navigator>
   </>
 );

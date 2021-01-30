@@ -7,8 +7,10 @@
 - [x] Beautify check-duplicate button.
 - [x] Add password, name, email validator.
 - [x] Update api calls with the new remote server address.
-- [ ] FIX: screens are overlapped when navigated (apk only)
+- [x] FIX: screens are overlapped when navigated (apk only)
   - [x] Use Wrapper?
-    - [ ] FIX: header overlapped
-    - [ ] FIX: header not fully transparent
-- [ ] FIX: can't get contacts from an Android device (apk only)
+    - [x] FIX: header overlapped
+    - [x] FIX: header not fully transparent
+    - [x] FIX: overlay seems strange when keyboard is up
+- [x] FIX: can't get contacts from an Android device (apk only)
+- [x] Search bar text optimization

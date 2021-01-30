@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components/native';
 import {StyleSheet} from 'react-native';
 
+import LinearGradientWrapper from '../wrappers/LinearGradientWrapper';
+
 const Container = styled.View`
   flex: 1;
   align-items: center;
@@ -43,17 +45,19 @@ const styles = StyleSheet.create({
 
 const HomeScreen = (props) => {
   return (
-    <Container>
-      <SearchView>
-        <Button
-          style={styles.button}
-          onPress={() => {
-            props.navigation.navigate('ContactsScreen');
-          }}>
-          <ButtonText>START</ButtonText>
-        </Button>
-      </SearchView>
-    </Container>
+    <LinearGradientWrapper>
+      <Container>
+        <SearchView>
+          <Button
+            style={styles.button}
+            onPress={() => {
+              props.navigation.navigate('ContactsScreen');
+            }}>
+            <ButtonText>START</ButtonText>
+          </Button>
+        </SearchView>
+      </Container>
+    </LinearGradientWrapper>
   );
 };
 

@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 import Users from '../stores/Users';
 
 import SignalTab from '../navigators/SignalTab';
+import LinearGradientWrapper from '../wrappers/LinearGradientWrapper';
 
 const Container = styled.View`
   flex: 1;
@@ -46,19 +47,21 @@ const SignalView = styled.View`
 `;
 
 const MySignalScreen = () => (
-  <Container>
-    <ProfileView>
-      <ProfileTxtView>
-        <InfoView>
-          <NameTxt>{Users.name}님,</NameTxt>
-          <PhoneTxt>반가워요.</PhoneTxt>
-        </InfoView>
-      </ProfileTxtView>
-    </ProfileView>
-    <SignalView>
-      <SignalTab />
-    </SignalView>
-  </Container>
+  <LinearGradientWrapper>
+    <Container>
+      <ProfileView>
+        <ProfileTxtView>
+          <InfoView>
+            <NameTxt>{Users.name}님,</NameTxt>
+            <PhoneTxt>반가워요.</PhoneTxt>
+          </InfoView>
+        </ProfileTxtView>
+      </ProfileView>
+      <SignalView>
+        <SignalTab />
+      </SignalView>
+    </Container>
+  </LinearGradientWrapper>
 );
 
 export default MySignalScreen;

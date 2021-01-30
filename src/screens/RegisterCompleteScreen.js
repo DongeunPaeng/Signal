@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import styled from 'styled-components/native';
+
 import Users from '../stores/Users';
+import LinearGradientWrapper from '../wrappers/LinearGradientWrapper';
 
 const Container = styled.View`
   flex: 1;
@@ -104,14 +106,13 @@ const RegisterCompleteScreen = (props) => {
       }),
     };
     fetch('https://heartsignal.dev/api/users/send-auth', fetchOptions)
-      .then((res) => {
-        if (res.status === 200) {
-          if (res.isDuplicate) {
-            alert('사용 중인 휴대전화입니다.');
-          } else {
-            setIsAuthSent(true);
-            alert('인증번호를 1분 내로 입력해주세요');
-          }
+      .then(async (res) => {
+        const data = await res.json();
+        if (data.isDuplicate) {
+          alert('사용 중인 휴대전화입니다.');
+        } else {
+          setIsAuthSent(true);
+          alert('인증번호를 1분 내로 입력해주세요');
         }
       })
       .catch((err) => alert(err));
@@ -185,44 +186,46 @@ const RegisterCompleteScreen = (props) => {
   };
 
   return (
-    <Container>
-      <Text>전화번호</Text>
-      <Wrapper>
-        <TextInput
-          color="white"
-          placeholderTextColor="rgba(255, 255, 255, 0.3)"
-          placeholder="01012345678"
-          onChangeText={handlePhoneChange}
-        />
-        <CheckButton onPress={requestAuthCode}>
-          <CheckButtonText>인증번호 발송</CheckButtonText>
-        </CheckButton>
-      </Wrapper>
-      <Text>인증번호</Text>
-      <Wrapper>
-        <TextInput
-          color="white"
-          placeholderTextColor="rgba(255, 255, 255, 0.3)"
-          placeholder="1234"
-          onChangeText={handleAuthCodeChange}
-        />
-        <CheckButton onPress={checkAuthCode}>
-          <CheckButtonText>인증번호 확인</CheckButtonText>
-        </CheckButton>
-      </Wrapper>
-      <Text>이름</Text>
-      <Wrapper>
-        <TextInput
-          color="white"
-          placeholderTextColor="rgba(255, 255, 255, 0.3)"
-          placeholder="홍길동"
-          onChangeText={handleNameChange}
-        />
-      </Wrapper>
-      <Button onPress={register}>
-        <ButtonText>가입완료</ButtonText>
-      </Button>
-    </Container>
+    <LinearGradientWrapper>
+      <Container>
+        <Text>전화번호</Text>
+        <Wrapper>
+          <TextInput
+            color="white"
+            placeholderTextColor="rgba(255, 255, 255, 0.3)"
+            placeholder="01012345678"
+            onChangeText={handlePhoneChange}
+          />
+          <CheckButton onPress={requestAuthCode}>
+            <CheckButtonText>인증번호 발송</CheckButtonText>
+          </CheckButton>
+        </Wrapper>
+        <Text>인증번호</Text>
+        <Wrapper>
+          <TextInput
+            color="white"
+            placeholderTextColor="rgba(255, 255, 255, 0.3)"
+            placeholder="1234"
+            onChangeText={handleAuthCodeChange}
+          />
+          <CheckButton onPress={checkAuthCode}>
+            <CheckButtonText>인증번호 확인</CheckButtonText>
+          </CheckButton>
+        </Wrapper>
+        <Text>이름</Text>
+        <Wrapper>
+          <TextInput
+            color="white"
+            placeholderTextColor="rgba(255, 255, 255, 0.3)"
+            placeholder="홍길동"
+            onChangeText={handleNameChange}
+          />
+        </Wrapper>
+        <Button onPress={register}>
+          <ButtonText>가입완료</ButtonText>
+        </Button>
+      </Container>
+    </LinearGradientWrapper>
   );
 };
 export default RegisterCompleteScreen;

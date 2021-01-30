@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
+import LinearGradientWrapper from '../wrappers/LinearGradientWrapper';
+
 const Container = styled.View`
   flex: 1;
   justify-content: center;
@@ -15,9 +17,11 @@ const Text = styled.Text`
 `;
 
 const SettingsScreen = () => (
-  <Container>
-    <Text>준비중입니다!</Text>
-  </Container>
+  <LinearGradientWrapper>
+    <Container>
+      <Text>준비중입니다!</Text>
+    </Container>
+  </LinearGradientWrapper>
 );
 
 export default SettingsScreen;

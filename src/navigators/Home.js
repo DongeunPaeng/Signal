@@ -10,17 +10,23 @@ const Stack = createStackNavigator();
 const Home = () => (
   <Stack.Navigator screenOptions={{headerShown: false}}>
     <Stack.Screen
-      // options={{title: '홈', headerTitleStyle: {color: 'tomato', fontWeight: 'bold'}}}
+      options={{
+        cardOverlayEnabled: false,
+      }}
       name="HomeScreen"
       component={HomeScreen}
     />
     <Stack.Screen
-      // options={{title: '수신자 선택'}}
+      options={{
+        cardOverlayEnabled: false,
+      }}
       name="ContactsScreen"
       component={ContactsScreen}
     />
     <Stack.Screen
-      // options={{title: '시그널 보내기'}}
+      options={{
+        cardOverlayEnabled: false,
+      }}
       name="SendSignalScreen"
       component={SendSignalScreen}
     />

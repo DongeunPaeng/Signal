@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
+import styled from 'styled-components/native';
 
 import Users from '../stores/Users';
-import styled from 'styled-components/native';
+import LinearGradientWrapper from '../wrappers/LinearGradientWrapper';
 
 const Container = styled.View`
   flex: 1;
@@ -99,30 +100,32 @@ const LoginScreen = (props) => {
   };
 
   return (
-    <Container>
-      <Text>이메일</Text>
-      <TextInput
-        color="white"
-        placeholderTextColor="rgba(255, 255, 255, 0.3)"
-        placeholder="이메일 입력"
-        onChangeText={handleEmailChange}
-      />
-      <Text>비밀번호</Text>
-      <TextInput
-        color="white"
-        placeholder="비밀번호 입력"
-        placeholderTextColor="rgba(255, 255, 255, 0.3)"
-        onChangeText={handlePasswordChange}
-        secureTextEntry={true}
-      />
-      <Button onPress={login}>
-        <ButtonText>로그인</ButtonText>
-      </Button>
-      <TransparentButton
-        onPress={() => props.navigation.navigate('RegisterScreen')}>
-        <ClickableText>아직 계정이 없으신가요?</ClickableText>
-      </TransparentButton>
-    </Container>
+    <LinearGradientWrapper>
+      <Container>
+        <Text>이메일</Text>
+        <TextInput
+          color="white"
+          placeholderTextColor="rgba(255, 255, 255, 0.3)"
+          placeholder="이메일 입력"
+          onChangeText={handleEmailChange}
+        />
+        <Text>비밀번호</Text>
+        <TextInput
+          color="white"
+          placeholder="비밀번호 입력"
+          placeholderTextColor="rgba(255, 255, 255, 0.3)"
+          onChangeText={handlePasswordChange}
+          secureTextEntry={true}
+        />
+        <Button onPress={login}>
+          <ButtonText>로그인</ButtonText>
+        </Button>
+        <TransparentButton
+          onPress={() => props.navigation.navigate('RegisterScreen')}>
+          <ClickableText>아직 계정이 없으신가요?</ClickableText>
+        </TransparentButton>
+      </Container>
+    </LinearGradientWrapper>
   );
 };
 

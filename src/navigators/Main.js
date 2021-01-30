@@ -39,8 +39,20 @@ const Main = () => (
         },
         showLabel: false,
       }}>
-      <BottomTab.Screen name="Home" component={Home} />
-      <BottomTab.Screen name="MyPage" component={MyPage} />
+      <BottomTab.Screen
+        options={{
+          cardOverlayEnabled: false,
+        }}
+        name="Home"
+        component={Home}
+      />
+      <BottomTab.Screen
+        options={{
+          cardOverlayEnabled: false,
+        }}
+        name="MyPage"
+        component={MyPage}
+      />
     </BottomTab.Navigator>
   </>
 );
