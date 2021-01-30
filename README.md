@@ -8,5 +8,7 @@
 - [x] Add password, name, email validator.
 - [x] Update api calls with the new remote server address.
 - [ ] FIX: screens are overlapped when navigated (apk only)
-  - [ ] Following GitHub issue's conversation, but not sure if SafeAreaView should go beyond or below LinearGradient.
+  - [x] Use Wrapper?
+    - [ ] FIX: header overlapped
+    - [ ] FIX: header not fully transparent
 - [ ] FIX: can't get contacts from an Android device (apk only)

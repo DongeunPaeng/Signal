@@ -20,18 +20,18 @@ const App = () => (
       translucent
       backgroundColor="transparent"
     />
-    <SafeAreaView
-      style={{flex: 1, width: '100%', backgroundColor: 'transparent'}}>
-      <LinearGradient
-        colors={['#ff0f7b', '#f89b29']}
-        style={{
-          flex: 1,
-        }}>
+    <LinearGradient
+      colors={['#ff0f7b', '#f89b29']}
+      style={{
+        flex: 1,
+      }}>
+      <SafeAreaView
+        style={{flex: 1, width: '100%', backgroundColor: 'transparent'}}>
         <NavigationContainer theme={mainTheme}>
           <RootNavigator />
         </NavigationContainer>
-      </LinearGradient>
-    </SafeAreaView>
+      </SafeAreaView>
+    </LinearGradient>
   </>
 );
 
