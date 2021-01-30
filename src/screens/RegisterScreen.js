@@ -100,10 +100,10 @@ const RegisterScreen = (props) => {
       }),
     };
     if (!email || !password || !passwordCheck) {
-      alert('내용을 모두 입력해주세요');
+      alert('내용을 모두 입력해주세요.');
       return;
     } else if (!isDuplicateChecked) {
-      alert('이메일 중복확인을 해주세요');
+      alert('이메일 중복확인을 해주세요.');
       return;
     } else if (password !== passwordCheck) {
       alert('비밀번호가 일치하지 않습니다.');
@@ -185,6 +185,7 @@ const RegisterScreen = (props) => {
             placeholderTextColor="rgba(255, 255, 255, 0.3)"
             placeholder="이메일 입력"
             onChangeText={handleEmailChange}
+            autoCapitalize="none"
           />
           <CheckButton onPress={checkDuplicate}>
             <CheckButtonText>중복확인</CheckButtonText>
@@ -198,6 +199,7 @@ const RegisterScreen = (props) => {
           placeholder="8자 이상 대소문자, 숫자, 특수문자 조합"
           onChangeText={handlePasswordChange}
           secureTextEntry={true}
+          autoCapitalize="none"
         />
         <Text>비밀번호 확인</Text>
         <PasswordInput
@@ -206,6 +208,7 @@ const RegisterScreen = (props) => {
           placeholder="비밀번호 재입력"
           onChangeText={handlePasswordCheckChange}
           secureTextEntry={true}
+          autoCapitalize="none"
         />
         <Button onPress={navigateToNextScreen}>
           <ButtonText>확인</ButtonText>

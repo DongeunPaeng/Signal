@@ -108,6 +108,7 @@ const ContactsScreen = (props) => {
             clearIcon={null}
             onChangeText={handleSearch}
             value={searchTerm}
+            autoCapitalize="none"
           />
         </SearchView>
         <ContactsView

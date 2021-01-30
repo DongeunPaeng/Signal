@@ -108,6 +108,7 @@ const LoginScreen = (props) => {
           placeholderTextColor="rgba(255, 255, 255, 0.3)"
           placeholder="이메일 입력"
           onChangeText={handleEmailChange}
+          autoCapitalize="none"
         />
         <Text>비밀번호</Text>
         <TextInput
@@ -116,6 +117,7 @@ const LoginScreen = (props) => {
           placeholderTextColor="rgba(255, 255, 255, 0.3)"
           onChangeText={handlePasswordChange}
           secureTextEntry={true}
+          autoCapitalize="none"
         />
         <Button onPress={login}>
           <ButtonText>로그인</ButtonText>

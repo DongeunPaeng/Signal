@@ -93,7 +93,7 @@ const RegisterCompleteScreen = (props) => {
 
   const requestAuthCode = () => {
     if (!phone) {
-      alert('전화번호를 입력하세요');
+      alert('전화번호를 입력하세요.');
       return;
     }
     const fetchOptions = {
@@ -112,7 +112,7 @@ const RegisterCompleteScreen = (props) => {
           alert('사용 중인 휴대전화입니다.');
         } else {
           setIsAuthSent(true);
-          alert('인증번호를 1분 내로 입력해주세요');
+          alert('인증번호를 3분 내로 입력해주세요.');
         }
       })
       .catch((err) => alert(err));
@@ -120,10 +120,10 @@ const RegisterCompleteScreen = (props) => {
 
   const checkAuthCode = () => {
     if (!isAuthSent) {
-      alert('인증번호 발송을 눌러주세요');
+      alert('인증번호 발송을 눌러주세요.');
       return;
     } else if (!authCode) {
-      alert('인증번호를 입력해주세요');
+      alert('인증번호를 입력해주세요.');
       return;
     }
     const fetchOptions = {
@@ -195,6 +195,7 @@ const RegisterCompleteScreen = (props) => {
             placeholderTextColor="rgba(255, 255, 255, 0.3)"
             placeholder="01012345678"
             onChangeText={handlePhoneChange}
+            autoCapitalize="none"
           />
           <CheckButton onPress={requestAuthCode}>
             <CheckButtonText>인증번호 발송</CheckButtonText>
@@ -207,6 +208,7 @@ const RegisterCompleteScreen = (props) => {
             placeholderTextColor="rgba(255, 255, 255, 0.3)"
             placeholder="1234"
             onChangeText={handleAuthCodeChange}
+            autoCapitalize="none"
           />
           <CheckButton onPress={checkAuthCode}>
             <CheckButtonText>인증번호 확인</CheckButtonText>
@@ -219,6 +221,7 @@ const RegisterCompleteScreen = (props) => {
             placeholderTextColor="rgba(255, 255, 255, 0.3)"
             placeholder="홍길동"
             onChangeText={handleNameChange}
+            autoCapitalize="none"
           />
         </Wrapper>
         <Button onPress={register}>

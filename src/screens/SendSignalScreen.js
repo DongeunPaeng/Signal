@@ -134,7 +134,7 @@ const SendSignalScreen = (props) => {
           <SubMessageDesc>
             *수신자가 비회원일 경우, 문자로 시그널이 보내집니다.
           </SubMessageDesc>
-          <MessageInput onChangeText={handleTextChange} />
+          <MessageInput autoCapitalize="none" onChangeText={handleTextChange} />
         </MessageView>
         <BtnView>
           <Button onPress={sendSignal}>
