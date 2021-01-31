@@ -15,6 +15,6 @@
 - [x] FIX: can't get contacts from an Android device. (apk only)
 - [x] Search bar text optimization.
 - [x] FEEDBACK: prevent uppercase everywhere.
-- [ ] Prepare publishing.
-    - [ ] Make Screenshots.
+- [x] Prepare publishing.
+    - [x] Make Screenshots.
     - [ ] Make Splash Image.

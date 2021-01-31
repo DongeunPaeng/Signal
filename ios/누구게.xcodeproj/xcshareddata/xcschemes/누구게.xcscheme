@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "MySignal.app"
-               BlueprintName = "MySignal"
-               ReferencedContainer = "container:MySignal.xcodeproj">
+               BuildableName = "누구게.app"
+               BlueprintName = "누구게"
+               ReferencedContainer = "container:누구게.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "MySignalTests.xctest"
-               BlueprintName = "MySignalTests"
-               ReferencedContainer = "container:MySignal.xcodeproj">
+               BuildableName = "누구게Tests.xctest"
+               BlueprintName = "누구게Tests"
+               ReferencedContainer = "container:누구게.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "MySignal.app"
-            BlueprintName = "MySignal"
-            ReferencedContainer = "container:MySignal.xcodeproj">
+            BuildableName = "누구게.app"
+            BlueprintName = "누구게"
+            ReferencedContainer = "container:누구게.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "MySignal.app"
-            BlueprintName = "MySignal"
-            ReferencedContainer = "container:MySignal.xcodeproj">
+            BuildableName = "누구게.app"
+            BlueprintName = "누구게"
+            ReferencedContainer = "container:누구게.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
