@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import CardView from 'react-native-cardview';
 
 const Container = styled.TouchableOpacity`
-  margin: 20px 10px 0px 10px;
+  margin: 20px 10px 10px 10px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 20px;
 `;
