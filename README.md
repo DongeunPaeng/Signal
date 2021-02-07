@@ -16,5 +16,9 @@
 - [x] Search bar text optimization.
 - [x] FEEDBACK: prevent uppercase everywhere.
 - [x] Prepare publishing.
-    - [x] Make Screenshots.
-    - [ ] Make Splash Image.
+  - [x] Make Screenshots.
+  - [ ] Make Splash Image.
+- [ ] Fix FlatList to be overlapped.
+- [ ] Publish to stores.
+  - [x] PlayStore
+  - [ ] AppStore

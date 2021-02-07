@@ -1,20 +1,13 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import CardView from 'react-native-cardview';
 
 const Container = styled.TouchableOpacity`
   margin: 20px 10px 0px 10px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 20px;
-`;
-
-const TxtView = styled.View`
-  flex: 1;
-  justify-content: flex-start;
-`;
-
-const MsgTextView = styled.View`
-  padding: 15px;
+  height: 80px;
+  justify-content: center;
+  padding: 10px;
 `;
 
 const MsgText = styled.Text`
@@ -23,19 +16,11 @@ const MsgText = styled.Text`
   font-size: 14px;
 `;
 
-const FriendsCard = ({name, phone}) => {
-  return (
-    <CardView style={{backgroundColor: 'transparent'}} cardElevation={0} cardMaxElevation={0} cornerRadius={10}>
-      <Container>
-        <TxtView>
-          <MsgTextView>
-            <MsgText>{name}</MsgText>
-            <MsgText>{phone}</MsgText>
-          </MsgTextView>
-        </TxtView>
-      </Container>
-    </CardView>
-  );
-};
+const FriendsCard = ({name, phone}) => (
+  <Container>
+    <MsgText>{name}</MsgText>
+    <MsgText>{phone}</MsgText>
+  </Container>
+);
 
 export default FriendsCard;

@@ -43,6 +43,8 @@ const SentSignals = (props) => {
 
   useEffect(() => {
     getSignals();
+    console.log(typeof(signals))
+    console.log(signals)
   }, [isFocused]);
 
   const renderItem = ({item}) => (
