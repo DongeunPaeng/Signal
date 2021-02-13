@@ -17,8 +17,18 @@
 - [x] FEEDBACK: prevent uppercase everywhere.
 - [x] Prepare publishing.
   - [x] Make Screenshots.
-  - [ ] Make Splash Image.
-- [ ] Fix FlatList to be overlapped.
+  - [x] Make Splash Image.
+- [x] Fix FlatList not to be overlapped.
 - [ ] Publish to stores.
   - [x] PlayStore
   - [ ] AppStore
+- User feedback:
+  - [x] Improve search screen.
+    - [x] Replace dummy status with real one.
+      - [x] Make an API call to check if the friend's number is in the Database.
+  - [ ] Add a feature to assign 'Sender's name' such as 1004.
+- Improve MyPage:
+  - [x] Describe how to find out who sent the message to the user.
+- [x] Complete SettingsScreen.
+- [x] Enable Logout.
+- [x] Understand when and why to use JSON through HTTP.

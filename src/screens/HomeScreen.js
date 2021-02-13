@@ -10,6 +10,13 @@ const Container = styled.View`
   justify-content: center;
 `;
 
+const Text = styled.Text`
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: white;
+`;
+
 const SearchView = styled.View`
   width: 80%;
   height: 40px;
@@ -56,6 +63,7 @@ const HomeScreen = (props) => {
             <ButtonText>START</ButtonText>
           </Button>
         </SearchView>
+        <Text>버튼을 눌러 시그널을 보낼 친구를 선택하세요.</Text>
       </Container>
     </LinearGradientWrapper>
   );

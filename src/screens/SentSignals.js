@@ -17,6 +17,11 @@ const SignalList = styled.FlatList`
   width: 100%;
 `;
 
+const Margin = styled.View`
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
+
 const SentSignals = (props) => {
   const [signals, setSignals] = useState([]);
   const isFocused = useIsFocused();
@@ -43,8 +48,6 @@ const SentSignals = (props) => {
 
   useEffect(() => {
     getSignals();
-    console.log(typeof(signals))
-    console.log(signals)
   }, [isFocused]);
 
   const renderItem = ({item}) => (
@@ -59,11 +62,13 @@ const SentSignals = (props) => {
   return (
     <Container>
       {signals?.length > 0 ? (
-        <SignalList
-          data={signals}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id.toString()}
-        />
+        <Margin>
+          <SignalList
+            data={signals}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id.toString()}
+          />
+        </Margin>
       ) : (
         <Text style={{color: 'white'}}>시그널을 보내보세요!</Text>
       )}

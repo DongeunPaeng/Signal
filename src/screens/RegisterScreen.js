@@ -8,13 +8,23 @@ const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: flex-start;
-  padding: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 `;
 
 const Text = styled.Text`
   font-weight: bold;
   font-size: 15px;
   margin-bottom: 10px;
+  color: white;
+`;
+
+const Message = styled.Text`
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 20px;
   color: white;
 `;
 
@@ -109,7 +119,7 @@ const RegisterScreen = (props) => {
       alert('비밀번호가 일치하지 않습니다.');
       return;
     } else if (!isValidated) {
-      alert('8자 이상 대소문자, 숫자, 특수문자 조합');
+      alert('8자 이상 대소문자, 숫자, 특수문자 조합으로 만들어주세요.');
       return;
     } else {
       fetch('https://heartsignal.dev/api/users/try', fetchOptions)
@@ -201,6 +211,9 @@ const RegisterScreen = (props) => {
           secureTextEntry={true}
           autoCapitalize="none"
         />
+        <Message>
+          8자 이상 대소문자, 숫자, 특수문자 조합으로 만들어주세요.
+        </Message>
         <Text>비밀번호 확인</Text>
         <PasswordInput
           color="white"

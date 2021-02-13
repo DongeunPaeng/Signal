@@ -14,6 +14,13 @@ const Container = styled.View`
   background-color: transparent;
 `;
 
+const Text = styled.Text`
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: white;
+`;
+
 const SearchView = styled.View`
   margin-top: 30px;
   width: 80%;
@@ -42,7 +49,34 @@ const ContactsScreen = (props) => {
         name: contact.displayName,
         phone: contact.phoneNumbers[0]?.number.replace(/-/g, ''),
       }));
-      setContacts(trimmedContacts);
+      const fetchOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          phone: trimmedContacts,
+        }),
+      };
+      let finalContacts
+      await fetch('https://heartsignal.dev/api/users/get-users', fetchOptions)
+        .then(async (res) => {
+          const data = await res.json();
+          const existingUsers = data.map((user) => user.phone);
+          if (res.status !== 200) {
+            alert('서버에서 답이 이상하게 왔어요.');
+            return;
+          }
+          finalContacts = trimmedContacts.map((contact) => {
+            return existingUsers.includes(contact.phone)
+              ? {existing: true, ...contact}
+              : {existing: false, ...contact};
+          });
+        })
+        .catch((err) => {
+          console.log('err:', err);
+        });
+      setContacts(finalContacts);
     });
   };
 
@@ -58,6 +92,7 @@ const ContactsScreen = (props) => {
     <Contact
       name={item.name}
       phone={item.phone}
+      existing={item.existing}
       onPress={() => {
         props.navigation.navigate('SendSignalScreen', {
           name: item.name,
@@ -77,9 +112,9 @@ const ContactsScreen = (props) => {
         <SearchView>
           <SearchBar
             color="white"
-            searchIcon={null}
+            searchIcon={{color: 'white'}}
             inputStyle={{
-              textAlign: 'center',
+              textAlign: 'left',
               fontWeight: 'bold',
               backgroundColor: 'transparent',
               justifyContent: 'center',
@@ -103,14 +138,15 @@ const ContactsScreen = (props) => {
               shadowRadius: 16.0,
               elevation: 50,
             }}
-            placeholder="SEARCH"
+            placeholder="연락처 검색"
             placeholderTextColor="white"
-            clearIcon={null}
+            clearIcon={{color: 'white'}}
             onChangeText={handleSearch}
             value={searchTerm}
             autoCapitalize="none"
           />
         </SearchView>
+        <Text>누구에게 보낼 건가요?</Text>
         <ContactsView
           data={filteredContacts}
           renderItem={renderItem}

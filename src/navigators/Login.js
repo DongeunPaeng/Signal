@@ -20,7 +20,7 @@ const Login = (props) => {
         Users.setUser(userObj.token, userObj.name, userObj.phone);
         props.navigation.reset({index: 0, routes: [{name: 'Main'}]});
       } else {
-        console.log('no user from storage');
+        console.log('no user');
       }
     } catch (err) {
       console.log(err);

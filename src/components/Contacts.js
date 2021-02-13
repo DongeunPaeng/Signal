@@ -28,14 +28,34 @@ const PhoneText = styled.Text`
   font-size: 12px;
 `;
 
+const RegStatus = styled.View`
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const RegStatusText = styled.Text`
+  font-weight: bold;
+  color: white;
+  margin-right: 20px;
+`;
+
 const Contact = (props) => {
   return (
     <>
       <Container onPress={props.onPress}>
+        <Ionicons
+          size={40}
+          style={{alignSelf: 'center', marginLeft: 15}}
+          name="person-circle"
+          color="white"
+        />
         <TxtView>
           <NameText>{props.name}</NameText>
           <PhoneText>{props.phone}</PhoneText>
         </TxtView>
+        <RegStatus>
+          <RegStatusText>{props.existing ? '가입 중' : ''}</RegStatusText>
+        </RegStatus>
       </Container>
     </>
   );

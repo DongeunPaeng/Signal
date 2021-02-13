@@ -1,7 +1,8 @@
-import React from 'react';
-import {View, Text, SafeAreaView, StatusBar} from 'react-native';
+import React, {useEffect} from 'react';
+import {SafeAreaView, StatusBar} from 'react-native';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
+import SplashScreen from 'react-native-splash-screen';
 
 import RootNavigator from './src/navigators/RootNavigator';
 
@@ -13,25 +14,33 @@ const mainTheme = {
   },
 };
 
-const App = () => (
-  <>
-    <StatusBar
-      barStyle="light-content"
-      translucent
-      backgroundColor="transparent"
-    />
-    <LinearGradient
-      colors={['#ff0f7b', '#f89b29']}
-      style={{
-        flex: 1,
-      }}>
-      <SafeAreaView style={{flex: 1, width: '100%'}}>
-        <NavigationContainer theme={mainTheme}>
-          <RootNavigator />
-        </NavigationContainer>
-      </SafeAreaView>
-    </LinearGradient>
-  </>
-);
+const App = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 1000);
+  }, []);
+
+  return (
+    <>
+      <StatusBar
+        barStyle="light-content"
+        translucent
+        backgroundColor="transparent"
+      />
+      <LinearGradient
+        colors={['#ff0f7b', '#f89b29']}
+        style={{
+          flex: 1,
+        }}>
+        <SafeAreaView style={{flex: 1, width: '100%'}}>
+          <NavigationContainer theme={mainTheme}>
+            <RootNavigator />
+          </NavigationContainer>
+        </SafeAreaView>
+      </LinearGradient>
+    </>
+  );
+};
 
 export default App;
