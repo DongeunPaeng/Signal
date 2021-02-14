@@ -36,3 +36,7 @@
 - [ ] Show maximum two numbers when a user's friend has more than one numbers.
 - [ ] Reduce file size
     - [ ] Fix striping issue (unable to strip...)
+
+Immediate Next Step:
+  - Publish the next version with a new 'get-user' API call with token passed to the server.
+  - When publishing the above version, let's reduce the app's size substantially.

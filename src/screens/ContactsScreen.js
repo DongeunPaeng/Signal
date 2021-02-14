@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components/native';
 import {SearchBar} from 'react-native-elements';
-import {StyleSheet, PermissionsAndroid} from 'react-native';
+import {PermissionsAndroid} from 'react-native';
 import Contacts from 'react-native-contacts';
 
 import Contact from '../components/Contacts';
@@ -61,7 +61,7 @@ const ContactsScreen = (props) => {
         }),
       };
       let finalContacts;
-      await fetch('http://10.0.2.2:3000/api/users/get-users', fetchOptions)
+      await fetch('https://heartsignal.dev/api/users/get-users', fetchOptions)
         .then(async (res) => {
           const data = await res.json();
           const existingUsers = data.map((user) => user.phone);
