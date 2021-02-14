@@ -6,6 +6,7 @@ import Contacts from 'react-native-contacts';
 
 import Contact from '../components/Contacts';
 import LinearGradientWrapper from '../wrappers/LinearGradientWrapper';
+import Users from '../stores/Users';
 
 const Container = styled.View`
   flex: 1;
@@ -53,13 +54,14 @@ const ContactsScreen = (props) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          authorization: 'bearer ' + Users.token,
         },
         body: JSON.stringify({
           phone: trimmedContacts,
         }),
       };
-      let finalContacts
-      await fetch('https://heartsignal.dev/api/users/get-users', fetchOptions)
+      let finalContacts;
+      await fetch('http://10.0.2.2:3000/api/users/get-users', fetchOptions)
         .then(async (res) => {
           const data = await res.json();
           const existingUsers = data.map((user) => user.phone);

@@ -32,4 +32,7 @@
 - [x] Complete SettingsScreen.
 - [x] Enable Logout.
 - [x] Understand when and why to use JSON through HTTP.
-- [ ] Build apk file properly. (icons appear as Han characters.)
+- [x] Build apk file properly. (somehow it works now... maybe because I tried to reduce the size?)
+- [ ] Show maximum two numbers when a user's friend has more than one numbers.
+- [ ] Reduce file size
+    - [ ] Fix striping issue (unable to strip...)
