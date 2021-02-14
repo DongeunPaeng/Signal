@@ -32,3 +32,4 @@
 - [x] Complete SettingsScreen.
 - [x] Enable Logout.
 - [x] Understand when and why to use JSON through HTTP.
+- [ ] Build apk file properly. (icons appear as Han characters.)
