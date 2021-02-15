@@ -4,21 +4,17 @@ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 import com.android.build.OutputFile
 
 project.ext.react = [
-    enableHermes: false,  // clean and rebuild if changing
+    enableHermes: true,  // clean and rebuild if changing
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
 
-def enableSeparateBuildPerCPUArchitecture = false
+def enableSeparateBuildPerCPUArchitecture = true // dongeun paeng changed here
 def enableProguardInReleaseBuilds = true
 def jscFlavor = 'org.webkit:android-jsc:+'
 def enableHermes = project.ext.react.get("enableHermes", false);
 
 android {
-    dexOptions {
-       javaMaxHeapSize "3g"
-    }
-
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     compileOptions {
@@ -30,8 +26,8 @@ android {
         applicationId "com.mysignal"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 5
-        versionName "3.0"
+        versionCode 7 // here
+        versionName "3.2" // here
     }
     splits {
         abi {
@@ -63,9 +59,9 @@ android {
         }
         release {
             signingConfig signingConfigs.release
-            minifyEnabled true // enableProguardInReleaseBuilds
+            minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro" // TODO: check this works.
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
 
@@ -91,6 +87,8 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.1' // added by dongeun.paeng
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'

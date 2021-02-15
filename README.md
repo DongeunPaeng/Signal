@@ -35,8 +35,16 @@
 - [x] Build apk file properly. (somehow it works now... maybe because I tried to reduce the size?)
 - [ ] Show maximum two numbers when a user's friend has more than one numbers.
 - [ ] Reduce file size
-    - [ ] Fix striping issue (unable to strip...)
+  - [ ] Fix striping issue (unable to strip...)
+- [ ] Find why the app crashes.
+  - [x] Manually installed APK is okay.
+  - [x] Connected device is okay.
+  - [x] Virtual machine is okay.
+  - [x] Downloaded apk is okay.
+  - [ ] Downloaded aab is NOT okay. Why?
+    - [ ] I think it is because of the size. The huge size causes bundling process more difficult. Ant a problem occurs there.
 
 Immediate Next Step:
-  - Publish the next version with a new 'get-user' API call with token passed to the server.
-  - When publishing the above version, let's reduce the app's size substantially.
+
+- Reduce app's size substantially. IMPORTANT!
+  - Let's do it before adding any features.
