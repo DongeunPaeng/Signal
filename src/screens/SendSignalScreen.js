@@ -112,7 +112,7 @@ const SendSignalScreen = (props) => {
           Alert.alert('발송 완료', '문자가 전송되었습니다.', [
             {
               text: '확인',
-              onPress: () => props.navigation.navigate('MyPage'),
+              onPress: () => props.navigation.reset('MyPage'),
             },
           ]);
         }

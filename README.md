@@ -4,9 +4,9 @@
 - [ ] Fix striping issue (unable to strip...)
 
 ### Errors & Bugs
-- [ ] Routes should be reset after sending texts.
-- [ ] If users don't have any contacts, error says 'filter of undefined...'
-- [ ] Unify cards views.
+- [x] Routes should be reset after sending texts.
+- [ ] (Minor) If users don't have any contacts, error says 'filter of undefined...'
+- [x] Unify cards views.
 
 ### Features
 - [ ] Publish on AppStore

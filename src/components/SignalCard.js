@@ -4,16 +4,32 @@ import {DateTime} from 'luxon';
 
 const Container = styled.TouchableOpacity`
   margin: 10px 10px 10px 10px;
+  height: 80px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 20px;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
+  flex-direction: row;
+`;
+
+const MsgContainer = styled.View``;
+
+const FriendsText = styled.Text`
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
 `;
 
 const MsgText = styled.Text`
   color: white;
-  font-weight: bold;
   font-size: 14px;
+`;
+
+const TimeText = styled.Text`
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
 `;
 
 const SignalCard = ({location, date, to = undefined, msg}) => {
@@ -24,18 +40,17 @@ const SignalCard = ({location, date, to = undefined, msg}) => {
 
   return (
     <Container>
-      <MsgText>
-        {location} 날짜:{' '}
+      <MsgContainer>
+        <FriendsText>{to ? to : '익명의 친구'}</FriendsText>
+        <MsgText>{msg}</MsgText>
+      </MsgContainer>
+      <TimeText>
         {minuteDiff < 60
           ? minuteDiff + '분 전'
           : hourDiff < 24
           ? hourDiff + '시간 전'
           : dayDiff + '일 전'}
-      </MsgText>
-      <MsgText>
-        {location} 문자: {msg}
-      </MsgText>
-      {to && <MsgText>받은 사람: {to}</MsgText>}
+      </TimeText>
     </Container>
   );
 };
