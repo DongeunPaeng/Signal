@@ -1,19 +1,27 @@
 ## TODO
 
 ### Performance
+
 - [ ] Fix striping issue (unable to strip...)
 
 ### Errors & Bugs
+
 - [x] Routes should be reset after sending texts.
 - [ ] (Minor) If users don't have any contacts, error says 'filter of undefined...'
 - [x] Unify cards views.
 
 ### Features
+
 - [ ] Publish on AppStore
   - [x] Make iOS version.
+    - [x] App Icon
+      - [x] Change for Android, too.
+    - [x] Splash Screen
+      - [ ] Need to test on device
   - [x] Remove names on back buttons or headers themselves.
   - [x] Improve buttons and fonts. (Do this after reflecting design feedbacks on Android version first)
   - [x] Crash when reading contacts.
+  - [ ] Design Materials.
 - [ ] Add a feature to assign 'Sender's name' such as 1004.
 - [ ] Show maximum two numbers when a user's friend has more than one numbers.
 - [ ] Enable voice mail.
