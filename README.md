@@ -22,6 +22,10 @@
 - [ ] Publish to stores.
   - [x] PlayStore
   - [ ] AppStore
+    - [x] Make iOS version.
+    - [ ] Improve Back Button in RegisterScreen. (I think removing names will be enough)
+    - [ ] Improve buttons and fonts. (Do this after reflecting design feedbacks on Android version first)
+    - [ ] Crash when reading contacts.
 - User feedback:
   - [x] Improve search screen.
     - [x] Replace dummy status with real one.
@@ -34,17 +38,17 @@
 - [x] Understand when and why to use JSON through HTTP.
 - [x] Build apk file properly. (somehow it works now... maybe because I tried to reduce the size?)
 - [ ] Show maximum two numbers when a user's friend has more than one numbers.
-- [ ] Reduce file size
-  - [ ] Fix striping issue (unable to strip...)
-- [ ] Find why the app crashes.
+- [x] Reduce file size
+- [ ] Fix striping issue (unable to strip...)
+- [x] Find why the app crashes.
   - [x] Manually installed APK is okay.
   - [x] Connected device is okay.
   - [x] Virtual machine is okay.
   - [x] Downloaded apk is okay.
-  - [ ] Downloaded aab is NOT okay. Why?
-    - [ ] I think it is because of the size. The huge size causes bundling process more difficult. Ant a problem occurs there.
-
-Immediate Next Step:
-
-- Reduce app's size substantially. IMPORTANT!
-  - Let's do it before adding any features.
+  - [x] Downloaded aab is NOT okay. Why? (don't know, but apk is okay.)
+- [ ] Feedback:
+  - [ ] Route the user after sending the text with explanation and expectation.
+  - [ ] If the receiver sends you any text, you'll find him/her in 'counter-signal' tab.
+  - [ ] Format date and time.
+  - [ ] Give hints. (how?)
+  - [ ] Let users know their number will be opened after 100 days.

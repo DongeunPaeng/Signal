@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "누구게-tvOS.app"
-               BlueprintName = "누구게-tvOS"
-               ReferencedContainer = "container:누구게.xcodeproj">
+               BuildableName = "NGG-tvOS.app"
+               BlueprintName = "NGG-tvOS"
+               ReferencedContainer = "container:NGG.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "누구게-tvOSTests.xctest"
-               BlueprintName = "누구게-tvOSTests"
-               ReferencedContainer = "container:누구게.xcodeproj">
+               BuildableName = "NGG-tvOSTests.xctest"
+               BlueprintName = "NGG-tvOSTests"
+               ReferencedContainer = "container:NGG.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "누구게-tvOS.app"
-            BlueprintName = "누구게-tvOS"
-            ReferencedContainer = "container:누구게.xcodeproj">
+            BuildableName = "NGG-tvOS.app"
+            BlueprintName = "NGG-tvOS"
+            ReferencedContainer = "container:NGG.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "누구게-tvOS.app"
-            BlueprintName = "누구게-tvOS"
-            ReferencedContainer = "container:누구게.xcodeproj">
+            BuildableName = "NGG-tvOS.app"
+            BlueprintName = "NGG-tvOS"
+            ReferencedContainer = "container:NGG.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

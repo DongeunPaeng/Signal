@@ -9,7 +9,7 @@ project.ext.react = [
 
 apply from: "../../node_modules/react-native/react.gradle"
 
-def enableSeparateBuildPerCPUArchitecture = true // dongeun paeng changed here
+def enableSeparateBuildPerCPUArchitecture = false // dongeun paeng changed here
 def enableProguardInReleaseBuilds = true
 def jscFlavor = 'org.webkit:android-jsc:+'
 def enableHermes = project.ext.react.get("enableHermes", false);
@@ -26,8 +26,8 @@ android {
         applicationId "com.mysignal"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 7 // here
-        versionName "3.2" // here
+        versionCode 9 // here
+        versionName "3.4" // here
     }
     splits {
         abi {
