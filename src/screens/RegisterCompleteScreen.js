@@ -30,6 +30,8 @@ const TextInput = styled.TextInput`
   border-bottom-color: white;
   flex: 3;
   elevation: 50;
+  shadow-color: black;
+  shadow-opacity: 0.4;
 `;
 
 const CheckButton = styled.TouchableOpacity`
@@ -43,6 +45,8 @@ const CheckButton = styled.TouchableOpacity`
   align-self: flex-end;
   background-color: rgba(255, 255, 255, 0.3)
   elevation: 50;
+  shadow-color: black;
+  shadow-opacity: 0.4;
 `;
 
 const CheckButtonText = styled.Text`
@@ -57,6 +61,8 @@ const Button = styled.TouchableOpacity`
   height: 50px;
   background-color: rgba(255, 255, 255, 0.3);
   elevation: 30;
+  shadow-color: black;
+  shadow-opacity: 0.4;
   border-radius: 25px;
   margin-top: 30px;
   margin-bottom: 15px;
@@ -198,7 +204,7 @@ const RegisterCompleteScreen = (props) => {
             autoCapitalize="none"
           />
           <CheckButton onPress={requestAuthCode}>
-            <CheckButtonText>인증번호 발송</CheckButtonText>
+            <CheckButtonText>인증번호{'\n'}발송</CheckButtonText>
           </CheckButton>
         </Wrapper>
         <Text>인증번호</Text>
@@ -211,7 +217,7 @@ const RegisterCompleteScreen = (props) => {
             autoCapitalize="none"
           />
           <CheckButton onPress={checkAuthCode}>
-            <CheckButtonText>인증번호 확인</CheckButtonText>
+            <CheckButtonText>인증번호{'\n'}확인</CheckButtonText>
           </CheckButton>
         </Wrapper>
         <Text>이름</Text>

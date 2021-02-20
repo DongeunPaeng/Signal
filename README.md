@@ -11,9 +11,9 @@
 ### Features
 - [ ] Publish on AppStore
   - [x] Make iOS version.
-  - [ ] Improve Back Button in RegisterScreen. (I think removing names will be enough)
-  - [ ] Improve buttons and fonts. (Do this after reflecting design feedbacks on Android version first)
-  - [ ] Crash when reading contacts.
+  - [x] Remove names on back buttons or headers themselves.
+  - [x] Improve buttons and fonts. (Do this after reflecting design feedbacks on Android version first)
+  - [x] Crash when reading contacts.
 - [ ] Add a feature to assign 'Sender's name' such as 1004.
 - [ ] Show maximum two numbers when a user's friend has more than one numbers.
 - [ ] Enable voice mail.

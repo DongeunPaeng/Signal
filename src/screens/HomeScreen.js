@@ -47,6 +47,13 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
     elevation: 50,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 10,
+      height: 10,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
   },
 });
 

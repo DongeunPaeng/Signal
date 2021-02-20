@@ -38,48 +38,55 @@ const ContactsScreen = (props) => {
   const [contacts, setContacts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const getContacts = () => {
-    PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.READ_CONTACTS, {
-      title: 'Contacts',
-      message: 'This app would like to view your contacts.',
-      buttonPositive: 'Please accept bare mortal',
-    }).then(async () => {
-      const allContacts = await Contacts.getAll();
-      const trimmedContacts = allContacts.map((contact) => ({
-        id: contact.recordID,
-        name: contact.displayName,
-        phone: contact.phoneNumbers[0]?.number.replace(/-/g, ''),
-      }));
-      const fetchOptions = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          authorization: 'bearer ' + Users.token,
+  const getContacts = async () => {
+    if (Platform.OS === 'android') {
+      await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
+        {
+          title: 'Contacts',
+          message: 'This app would like to view your contacts.',
+          buttonPositive: 'Please accept bare mortal',
         },
-        body: JSON.stringify({
-          phone: trimmedContacts,
-        }),
-      };
-      let finalContacts;
-      await fetch('https://heartsignal.dev/api/users/get-users', fetchOptions)
-        .then(async (res) => {
-          const data = await res.json();
-          const existingUsers = data.map((user) => user.phone);
-          if (res.status !== 200) {
-            alert('서버에서 답이 이상하게 왔어요.');
-            return;
-          }
-          finalContacts = trimmedContacts.map((contact) => {
-            return existingUsers.includes(contact.phone)
-              ? {existing: true, ...contact}
-              : {existing: false, ...contact};
-          });
-        })
-        .catch((err) => {
-          console.log('err:', err);
+      );
+    }
+    const allContacts = await Contacts.getAll();
+    const trimmedContacts = allContacts.map((contact) => ({
+      id: contact.recordID,
+      name:
+        Platform.OS === 'android'
+          ? contact.displayName
+          : contact.givenName + contact.familyName,
+      phone: contact.phoneNumbers[0]?.number.replace(/[-() ]/g, ''),
+    }));
+    const fetchOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: 'bearer ' + Users.token,
+      },
+      body: JSON.stringify({
+        phone: trimmedContacts,
+      }),
+    };
+    let finalContacts;
+    await fetch('https://heartsignal.dev/api/users/get-users', fetchOptions)
+      .then(async (res) => {
+        const data = await res.json();
+        const existingUsers = data.map((user) => user.phone);
+        if (res.status !== 200) {
+          alert('서버에서 답이 이상하게 왔어요.');
+          return;
+        }
+        finalContacts = trimmedContacts.map((contact) => {
+          return existingUsers.includes(contact.phone)
+            ? {existing: true, ...contact}
+            : {existing: false, ...contact};
         });
-      setContacts(finalContacts);
-    });
+      })
+      .catch((err) => {
+        console.log('err:', err);
+      });
+    setContacts(finalContacts);
   };
 
   useEffect(() => {
@@ -139,6 +146,13 @@ const ContactsScreen = (props) => {
               shadowOpacity: 0.58,
               shadowRadius: 16.0,
               elevation: 50,
+              shadowColor: '#000',
+              shadowOffset: {
+                width: 10,
+                height: 10,
+              },
+              shadowOpacity: 0.3,
+              shadowRadius: 4,
             }}
             placeholder="연락처 검색"
             placeholderTextColor="white"

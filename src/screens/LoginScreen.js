@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
 
 import Users from '../stores/Users';
@@ -26,6 +27,8 @@ const TextInput = styled.TextInput`
   border-bottom-color: white;
   margin-bottom: 20px;
   elevation: 50;
+  shadow-color: black;
+  shadow-opacity: 0.4;
 `;
 
 const Button = styled.TouchableOpacity`
@@ -34,6 +37,8 @@ const Button = styled.TouchableOpacity`
   height: 50px;
   background-color: rgba(255, 255, 255, 0.3);
   elevation: 30;
+  shadow-color: black;
+  shadow-opacity: 0.4;
   border-radius: 25px;
   margin-top: 30px;
   margin-bottom: 15px;

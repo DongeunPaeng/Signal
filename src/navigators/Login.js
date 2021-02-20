@@ -40,6 +40,7 @@ const Login = (props) => {
       />
       <Stack.Screen
         options={{
+          headerShown: Platform.OS !== 'android' ? false : true,
           cardOverlayEnabled: false,
           title: '회원가입',
           headerStyle: {
@@ -56,6 +57,7 @@ const Login = (props) => {
       />
       <Stack.Screen
         options={{
+          headerShown: Platform.OS !== 'android' ? false : true,
           cardOverlayEnabled: false,
           title: '회원가입',
           headerStyle: {

@@ -38,6 +38,7 @@ const App = () => {
             <RootNavigator />
           </NavigationContainer>
         </SafeAreaView>
+        <SafeAreaView style={{flex: 0, backgroundColor: 'rgba(255, 255, 255, 0.3)'}} />
       </LinearGradient>
     </>
   );

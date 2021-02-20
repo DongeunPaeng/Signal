@@ -35,6 +35,8 @@ const EmailInput = styled.TextInput`
   border-bottom-width: 0.5px;
   border-bottom-color: white;
   elevation: 50;
+  shadow-color: black;
+  shadow-opacity: 0.4;
 `;
 
 const Wrapper = styled.View`
@@ -54,6 +56,8 @@ const CheckButton = styled.TouchableOpacity`
   align-self: flex-end;
   background-color: rgba(255, 255, 255, 0.3)
   elevation: 50;
+  shadow-color: black;
+  shadow-opacity: 0.4;
 `;
 
 const PasswordInput = styled.TextInput`
@@ -64,6 +68,8 @@ const PasswordInput = styled.TextInput`
   border-bottom-color: white;
   margin-bottom: 20px;
   elevation: 50;
+  shadow-color: black;
+  shadow-opacity: 0.4;
 `;
 
 const Button = styled.TouchableOpacity`
@@ -72,6 +78,8 @@ const Button = styled.TouchableOpacity`
   height: 50px;
   background-color: rgba(255, 255, 255, 0.3);
   elevation: 30;
+  shadow-color: black;
+  shadow-opacity: 0.4;
   border-radius: 25px;
   margin-top: 30px;
   margin-bottom: 15px;

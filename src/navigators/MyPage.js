@@ -19,6 +19,7 @@ const MyPage = (props) => {
           title: '',
           headerStyle: {
             backgroundColor: '#432371',
+            shadowColor: 'transparent',
             elevation: 0,
           },
           headerTintColor: 'white',
@@ -41,8 +42,8 @@ const MyPage = (props) => {
       />
       <Stack.Screen
         options={{
+          headerShown: Platform.OS !== 'android' ? false : true,
           cardOverlayEnabled: false,
-          title: '설정',
           headerStyle: {
             backgroundColor: '#432371',
             elevation: 0,

@@ -55,6 +55,8 @@ const MessageInput = styled.TextInput`
   padding: 10px;
   background-color: 'rgba(255, 255, 255, 0.1)'
   elevation: 50;
+  shadow-color: black;
+  shadow-opacity: 0.4;
 `;
 
 const BtnView = styled.View`
@@ -74,6 +76,8 @@ const Button = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   elevation: 40;
+  shadow-color: black;
+  shadow-opacity: 0.4;
 `;
 
 const ButtonText = styled.Text`
@@ -112,7 +116,17 @@ const SendSignalScreen = (props) => {
           Alert.alert('발송 완료', '문자가 전송되었습니다.', [
             {
               text: '확인',
-              onPress: () => props.navigation.reset('MyPage'),
+              onPress: () =>
+                Platform.OS === 'anroid'
+                  ? props.navigation.reset('MyPage')
+                  : props.navigation.reset({
+                      index: 0,
+                      routes: [
+                        {
+                          name: 'MyPage',
+                        },
+                      ],
+                    }),
             },
           ]);
         }
@@ -140,7 +154,8 @@ const SendSignalScreen = (props) => {
             수신자도 내게 문자를 보내면{'\n'}서로의 이름이 공개됩니다.{'\n'}
             친구의 마음을 확인해보세요!
             {'\n'}
-            {'\n'}3월 이후 발신 문자는{'\n'}50일 후 수신자에게 내 번호가 공개됩니다.
+            {'\n'}3월 이후 발신 문자는{'\n'}50일 후 수신자에게 내 번호가
+            공개됩니다.
           </SubMessageDesc>
           <Button onPress={sendSignal}>
             <ButtonText>시그널 전송</ButtonText>
