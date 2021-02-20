@@ -3,7 +3,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const LinearGradientWrapper = ({children}) => (
   <LinearGradient
-    colors={['#ff0f7b', '#f89b29']}
+    colors={['#432371', '#7c419c']}
     style={{
       flex: 1,
     }}>

@@ -25,7 +25,7 @@ const Main = () => (
             <Ionicons
               name={iconName}
               size={20}
-              color={focused ? 'white' : '#f89b29'}
+              color={focused ? 'white' : '#8e55ad'}
             />
           );
         },

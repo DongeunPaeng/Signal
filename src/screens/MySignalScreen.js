@@ -85,10 +85,8 @@ const MySignalScreen = () => (
         </ProfilePicView>
       </ProfileView>
       <MarginBottom>
-        <Description>시그널 3개를 보내보세요.</Description>
-        <Description>
-          내게 시그널을 보낸 친구에 대한 힌트가 생깁니다.
-        </Description>
+        <Description>2021년 3월 1일 이후 발신 문자의 경우</Description>
+        <Description>문자 수신 후 50일이 지나면 발신자가 공개됩니다.</Description>
       </MarginBottom>
       <SignalView>
         <SignalTab />

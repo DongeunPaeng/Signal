@@ -1,4 +1,25 @@
-### TODO
+## TODO
+
+### Performance
+- [ ] Fix striping issue (unable to strip...)
+
+### Errors & Bugs
+- [ ] Routes should be reset after sending texts.
+- [ ] If users don't have any contacts, error says 'filter of undefined...'
+- [ ] Unify cards views.
+
+### Features
+- [ ] Publish on AppStore
+  - [x] Make iOS version.
+  - [ ] Improve Back Button in RegisterScreen. (I think removing names will be enough)
+  - [ ] Improve buttons and fonts. (Do this after reflecting design feedbacks on Android version first)
+  - [ ] Crash when reading contacts.
+- [ ] Add a feature to assign 'Sender's name' such as 1004.
+- [ ] Show maximum two numbers when a user's friend has more than one numbers.
+- [ ] Enable voice mail.
+- [ ] Use push notification for users who have apps.
+
+## Completed
 
 - [x] Design improvements using glassmorphism.
 - [x] Sent signals missing from the screen.
@@ -19,36 +40,29 @@
   - [x] Make Screenshots.
   - [x] Make Splash Image.
 - [x] Fix FlatList not to be overlapped.
-- [ ] Publish to stores.
-  - [x] PlayStore
-  - [ ] AppStore
-    - [x] Make iOS version.
-    - [ ] Improve Back Button in RegisterScreen. (I think removing names will be enough)
-    - [ ] Improve buttons and fonts. (Do this after reflecting design feedbacks on Android version first)
-    - [ ] Crash when reading contacts.
+- [x] Publish to PlayStore.
 - User feedback:
   - [x] Improve search screen.
     - [x] Replace dummy status with real one.
       - [x] Make an API call to check if the friend's number is in the Database.
-  - [ ] Add a feature to assign 'Sender's name' such as 1004.
 - Improve MyPage:
   - [x] Describe how to find out who sent the message to the user.
 - [x] Complete SettingsScreen.
 - [x] Enable Logout.
 - [x] Understand when and why to use JSON through HTTP.
 - [x] Build apk file properly. (somehow it works now... maybe because I tried to reduce the size?)
-- [ ] Show maximum two numbers when a user's friend has more than one numbers.
 - [x] Reduce file size
-- [ ] Fix striping issue (unable to strip...)
 - [x] Find why the app crashes.
   - [x] Manually installed APK is okay.
   - [x] Connected device is okay.
   - [x] Virtual machine is okay.
   - [x] Downloaded apk is okay.
   - [x] Downloaded aab is NOT okay. Why? (don't know, but apk is okay.)
-- [ ] Feedback:
-  - [ ] Route the user after sending the text with explanation and expectation.
-  - [ ] If the receiver sends you any text, you'll find him/her in 'counter-signal' tab.
-  - [ ] Format date and time.
-  - [ ] Give hints. (how?)
-  - [ ] Let users know their number will be opened after 100 days.
+- [x] Feedback:
+  - [x] Route the user after sending the text with explanation and expectation.
+  - [x] Alert "If the receiver sends you any text, you'll find him/her in 'counter-signal' tab."
+  - [x] Format date and time as relative time.
+  - [x] Let users know their number will be opened after 50 days.
+  - [x] Use darker color.
+  - [x] Reverse order of Signal Cards.
+  - [x] Apply local time.

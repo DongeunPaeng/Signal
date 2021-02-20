@@ -43,7 +43,7 @@ const Login = (props) => {
           cardOverlayEnabled: false,
           title: '회원가입',
           headerStyle: {
-            backgroundColor: '#ff0f7b',
+            backgroundColor: '#432371',
             elevation: 0,
           },
           headerTintColor: 'white',
@@ -59,7 +59,7 @@ const Login = (props) => {
           cardOverlayEnabled: false,
           title: '회원가입',
           headerStyle: {
-            backgroundColor: '#ff0f7b',
+            backgroundColor: '#432371',
             elevation: 0,
           },
           headerTintColor: 'white',

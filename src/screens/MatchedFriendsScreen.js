@@ -33,7 +33,7 @@ const MatchedFriendsScreen = () => {
       .then(async (res) => {
         const data = await res.json();
         if (res.status === 200) {
-          setFriends(data);
+          setFriends(data.reverse());
         } else {
           alert('서버에서 친구를 못 불러왔어요.');
         }

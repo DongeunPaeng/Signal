@@ -33,7 +33,7 @@ const ReceivedSignals = (props) => {
       .then(async (res) => {
         const data = await res.json();
         if (res.status === 200) {
-          setSignals(data);
+          setSignals(data.reverse());
         } else {
           alert('서버에서 답이 이상하게 왔어요...');
         }

@@ -18,7 +18,7 @@ const MyPage = (props) => {
           cardOverlayEnabled: false,
           title: '',
           headerStyle: {
-            backgroundColor: 'transparent',
+            backgroundColor: '#432371',
             elevation: 0,
           },
           headerTintColor: 'white',
@@ -44,7 +44,7 @@ const MyPage = (props) => {
           cardOverlayEnabled: false,
           title: '설정',
           headerStyle: {
-            backgroundColor: '#ff0f7b',
+            backgroundColor: '#432371',
             elevation: 0,
           },
           headerTintColor: 'white',

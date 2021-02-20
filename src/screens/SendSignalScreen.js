@@ -35,12 +35,14 @@ const MessageView = styled.View`
 const MessageDesc = styled.Text`
   align-self: flex-start;
   color: white;
+  margin-bottom: 20px;
 `;
 
 const SubMessageDesc = styled.Text`
-  align-self: flex-start;
-  font-size: 12px;
-  margin-bottom: 20px;
+  align-self: center;
+  text-align: center;
+  font-size: 17px;
+  margin-bottom: 30px;
   color: white;
 `;
 
@@ -59,6 +61,7 @@ const BtnView = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
+  padding-bottom: 10px;
 `;
 
 const Button = styled.TouchableOpacity`
@@ -109,8 +112,7 @@ const SendSignalScreen = (props) => {
           Alert.alert('발송 완료', '문자가 전송되었습니다.', [
             {
               text: '확인',
-              onPress: () =>
-                props.navigation.reset({index: 0, routes: [{name: 'Home'}]}),
+              onPress: () => props.navigation.navigate('MyPage'),
             },
           ]);
         }
@@ -131,12 +133,15 @@ const SendSignalScreen = (props) => {
           <MessageDesc>
             수신자에게 보낼 메시지를 20자 이내로 입력해주세요.
           </MessageDesc>
-          <SubMessageDesc>
-            *수신자가 비회원일 경우, 문자로 시그널이 보내집니다.
-          </SubMessageDesc>
           <MessageInput autoCapitalize="none" onChangeText={handleTextChange} />
         </MessageView>
         <BtnView>
+          <SubMessageDesc>
+            수신자도 내게 문자를 보내면{'\n'}서로의 이름이 공개됩니다.{'\n'}
+            친구의 마음을 확인해보세요!
+            {'\n'}
+            {'\n'}3월 이후 발신 문자는{'\n'}50일 후 수신자에게 내 번호가 공개됩니다.
+          </SubMessageDesc>
           <Button onPress={sendSignal}>
             <ButtonText>시그널 전송</ButtonText>
           </Button>

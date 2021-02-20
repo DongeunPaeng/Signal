@@ -17,6 +17,7 @@
     "@react-navigation/material-top-tabs": "^5.3.10",
     "@react-navigation/native": "^5.8.10",
     "@react-navigation/stack": "^5.12.8",
+    "luxon": "^1.26.0",
     "mobx": "^6.0.4",
     "mobx-react": "^7.0.5",
     "react": "^16.13.1",
