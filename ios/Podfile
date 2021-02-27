@@ -3,17 +3,12 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'NGG' do
+target 'nuguge' do
   config = use_native_modules!
 
   # pod 'react-native-contacts', :path => '../node_modules/react-native-contacts'
 
   use_react_native!(:path => config["reactNativePath"])
-
-  target 'NGGTests' do
-    inherit! :complete
-    # Pods for testing
-  end
 
   # Enables Flipper.
   #
@@ -25,10 +20,10 @@ target 'NGG' do
   end
 end
 
-target 'NGG-tvOS' do
-  # Pods for NGG-tvOS
+target 'nuguge-tvOS' do
+  # Pods for nuguge-tvOS
 
-  target 'NGG-tvOSTests' do
+  target 'nuguge-tvOSnuguges' do
     inherit! :search_paths
     # Pods for testing
   end

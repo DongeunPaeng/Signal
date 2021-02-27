@@ -33,7 +33,6 @@ const ContactsView = styled.FlatList`
   flex: 1;
   width: 100%;
 `;
-
 const ContactsScreen = (props) => {
   const [contacts, setContacts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -71,12 +70,16 @@ const ContactsScreen = (props) => {
     let finalContacts;
     await fetch('https://heartsignal.dev/api/users/get-users', fetchOptions)
       .then(async (res) => {
-        const data = await res.json();
-        const existingUsers = data.map((user) => user.phone);
-        if (res.status !== 200) {
-          alert('서버에서 답이 이상하게 왔어요.');
+        if (res.status === 413) {
+          alert('연락처가 많아 응답이 느릴 수 있어요.');
           return;
         }
+        if (res.status !== 200) {
+          alert('서버에서 응답이 이상하게 날아왔어요.');
+          return;
+        }
+        const data = await res.json();
+        const existingUsers = data.map((user) => user.phone);
         finalContacts = trimmedContacts.map((contact) => {
           return existingUsers.includes(contact.phone)
             ? {existing: true, ...contact}
@@ -86,7 +89,8 @@ const ContactsScreen = (props) => {
       .catch((err) => {
         console.log('err:', err);
       });
-    setContacts(finalContacts);
+    finalContacts.sort((a, b) => b.existing - a.existing);
+    setContacts(finalContacts ? finalContacts : trimmedContacts);
   };
 
   useEffect(() => {
@@ -111,7 +115,7 @@ const ContactsScreen = (props) => {
     />
   );
 
-  const filteredContacts = contacts.filter(
+  const filteredContacts = contacts?.filter(
     (contact) => contact.name && contact.name.includes(searchTerm),
   );
 

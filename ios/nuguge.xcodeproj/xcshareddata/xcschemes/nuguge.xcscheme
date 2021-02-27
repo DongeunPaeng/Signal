@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1130"
-   version = "1.3">
+   LastUpgradeVersion = "1240"
+   version = "1.8">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
+            buildFornugugeing = "YES"
             buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "YES"
@@ -14,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "NGG-tvOS.app"
-               BlueprintName = "NGG-tvOS"
-               ReferencedContainer = "container:NGG.xcodeproj">
+               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+               BuildableName = "nuguge.app"
+               BlueprintName = "nuguge"
+               ReferencedContainer = "container:nuguge.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,16 +29,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "NGG-tvOSTests.xctest"
-               BlueprintName = "NGG-tvOSTests"
-               ReferencedContainer = "container:NGG.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -54,10 +45,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "NGG-tvOS.app"
-            BlueprintName = "NGG-tvOS"
-            ReferencedContainer = "container:NGG.xcodeproj">
+            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+            BuildableName = "nuguge.app"
+            BlueprintName = "nuguge"
+            ReferencedContainer = "container:nuguge.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -71,10 +62,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "NGG-tvOS.app"
-            BlueprintName = "NGG-tvOS"
-            ReferencedContainer = "container:NGG.xcodeproj">
+            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+            BuildableName = "nuguge.app"
+            BlueprintName = "nuguge"
+            ReferencedContainer = "container:nuguge.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -85,4 +76,22 @@
       buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
+   <nugugeAction
+      buildConfiguration = "buildConfiguration"
+      selectedDebuggerIdentifier = "selectedDebuggerIdentifier"
+      selectedLauncherIdentifier = "selectedLauncherIdentifier"
+      shouldUseLaunchSchemeArgsEnv = "shouldUseLaunchSchemeArgsEnv">
+      <nugugeables>
+         <nugugeableReference
+            skipped = "skipped">
+            <BuildableReference
+               BuildableIdentifier = "BuildableIdentifier"
+               BlueprintIdentifier = "BlueprintIdentifier"
+               BuildableName = "BuildableName"
+               BlueprintName = "BlueprintName"
+               ReferencedContainer = "ReferencedContainer">
+            </BuildableReference>
+         </nugugeableReference>
+      </nugugeables>
+   </nugugeAction>
 </Scheme>

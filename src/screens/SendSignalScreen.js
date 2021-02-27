@@ -33,15 +33,16 @@ const MessageView = styled.View`
 `;
 
 const MessageDesc = styled.Text`
+  font-size: 12px;
   align-self: flex-start;
   color: white;
-  margin-bottom: 20px;
+  margin-top: 10px;
 `;
 
 const SubMessageDesc = styled.Text`
   align-self: center;
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   margin-bottom: 30px;
   color: white;
 `;
@@ -144,18 +145,15 @@ const SendSignalScreen = (props) => {
           <PhoneTxt>{props.route.params.phone}</PhoneTxt>
         </ReceiverView>
         <MessageView>
-          <MessageDesc>
-            수신자에게 보낼 메시지를 20자 이내로 입력해주세요.
-          </MessageDesc>
           <MessageInput autoCapitalize="none" onChangeText={handleTextChange} />
+          <MessageDesc>
+            20자 이내로 입력해주세요.
+          </MessageDesc>
         </MessageView>
         <BtnView>
           <SubMessageDesc>
-            수신자도 내게 문자를 보내면{'\n'}서로의 이름이 공개됩니다.{'\n'}
-            친구의 마음을 확인해보세요!
-            {'\n'}
-            {'\n'}3월 이후 발신 문자는{'\n'}50일 후 수신자에게 내 번호가
-            공개됩니다.
+            친구도 내게 문자를 보내면{'\n'}'서로 호감'에 등록됩니다.{'\n'}
+            {'\n'}신고가 2회 이상 누적될 경우{'\n'}경고 없이 계정이 영구 삭제됩니다.
           </SubMessageDesc>
           <Button onPress={sendSignal}>
             <ButtonText>시그널 전송</ButtonText>

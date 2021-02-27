@@ -44,6 +44,7 @@ const MyPage = (props) => {
         options={{
           headerShown: Platform.OS !== 'android' ? false : true,
           cardOverlayEnabled: false,
+          title: '설정',
           headerStyle: {
             backgroundColor: '#432371',
             elevation: 0,
