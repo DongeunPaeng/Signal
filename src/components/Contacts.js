@@ -10,6 +10,19 @@ const Container = styled.TouchableOpacity`
   background-color: rgba(255, 255, 255, 0.3);
 `;
 
+const IconContainer = styled.View`
+  margin-left: 20px;
+  align-items: center;
+  justify-content: center;
+`;
+
+const IconText = styled.Text`
+  margin-top: 2px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+`;
+
 const TxtView = styled.View`
   margin-left: 20px;
   flex: 1;
@@ -43,12 +56,19 @@ const Contact = (props) => {
   return (
     <>
       <Container onPress={props.onPress}>
-        <Ionicons
-          size={40}
-          style={{alignSelf: 'center', marginLeft: 15}}
-          name="person-circle"
-          color="white"
-        />
+        {props.existing ? (
+          <IconContainer>
+            <>
+              <Ionicons
+                size={30}
+                style={{alignSelf: 'center'}}
+                name="thumbs-up-outline"
+                color="white"
+              />
+              <IconText>36.5{'\u00b0'}C</IconText>
+            </>
+          </IconContainer>
+        ) : null}
         <TxtView>
           <NameText>{props.name}</NameText>
           <PhoneText>{props.phone}</PhoneText>

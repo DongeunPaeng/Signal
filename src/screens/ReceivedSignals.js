@@ -82,7 +82,6 @@ const ReceivedSignals = (props) => {
     };
     fetch('https://heartsignal.dev/api/users/received-signals', fetchOptions)
       .then(async (res) => {
-        const data = await res.json();
         if (res.status === 403) {
           alert('신고 누적으로 로그아웃됩니다.');
           Users.clearUser();
@@ -92,6 +91,7 @@ const ReceivedSignals = (props) => {
           });
           return;
         }
+        const data = await res.json();
         if (res.status === 200) {
           setSignals(data.reverse());
         } else {

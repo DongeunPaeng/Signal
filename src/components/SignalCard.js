@@ -63,9 +63,11 @@ const SignalCard = ({
             ? hourDiff + '시간 전'
             : dayDiff + '일 전'}
         </TimeText>
-        <TimeText>
-          {reported ? '신고됨' : location === '받은' ? '눌러서 신고' : ''}
-        </TimeText>
+        {reported ? (
+          <TimeText>신고됨</TimeText>
+        ) : location === '받은' ? (
+          <TimeText>눌러서 신고</TimeText>
+        ) : null}
       </MsgContainerRight>
     </Container>
   );

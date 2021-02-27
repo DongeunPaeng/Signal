@@ -98,7 +98,7 @@ const ContactsScreen = (props) => {
       .catch((err) => {
         console.log('err:', err);
       });
-    finalContacts.sort((a, b) => b.existing - a.existing);
+    finalContacts?.sort((a, b) => b.existing - a.existing);
     setContacts(finalContacts ? finalContacts : trimmedContacts);
   };
 

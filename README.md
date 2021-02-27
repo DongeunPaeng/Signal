@@ -23,6 +23,7 @@
 
 ## Completed
 
+- [x] 'Reported' should not be seen in 'SentSignals' screen.
 - [x] Make people be able to report abusers and suspend abusers.
 - [x] Warn senders that abusing reports will lead to a permanent suspension.
 - [x] Make iOS version.

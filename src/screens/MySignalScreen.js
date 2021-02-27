@@ -11,6 +11,20 @@ const Container = styled.View`
   align-items: center;
   justify-content: flex-start;
 `;
+
+const IconContainer = styled.View`
+  margin-right: 20px;
+  align-items: center;
+  justify-content: center;
+`;
+
+const IconText = styled.Text`
+  margin-top: 2px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+`;
+
 const ProfileView = styled.View`
   height: 120px;
   flex-direction: row;
@@ -76,12 +90,15 @@ const MySignalScreen = () => (
           </InfoView>
         </ProfileTxtView>
         <ProfilePicView>
-          <Ionicons
-            size={80}
-            style={{marginRight: 10}}
-            name="person-circle"
-            color="white"
-          />
+          <IconContainer>
+            <Ionicons
+              size={30}
+              style={{alignSelf: 'center'}}
+              name="thumbs-up-outline"
+              color="white"
+            />
+            <IconText>36.5{'\u00b0'}C</IconText>
+          </IconContainer>
         </ProfilePicView>
       </ProfileView>
       <MarginBottom>
