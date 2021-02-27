@@ -74,6 +74,15 @@ const ContactsScreen = (props) => {
           alert('연락처가 많아 응답이 느릴 수 있어요.');
           return;
         }
+        if (res.status === 403) {
+          alert('신고 누적으로 로그아웃됩니다.');
+          Users.clearUser();
+          props.navigation.reset({
+            index: 0,
+            routes: [{name: 'Login'}],
+          });
+          return;
+        }
         if (res.status !== 200) {
           alert('서버에서 응답이 이상하게 날아왔어요.');
           return;

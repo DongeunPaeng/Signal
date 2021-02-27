@@ -2,15 +2,15 @@
 
 ### Features
 
-- [ ] Publish on AppStore.
+- [ ] Now: Publish on AppStore.
   - [ ] Design Materials.
   - [ ] Need an account.
-- [ ] Add a feature to assign 'Sender's name' such as 1004.
-- [ ] Show maximum two numbers when a user's friend has more than one numbers.
-- [ ] Enable voice mail.
-- [ ] Use push notification for users who have apps.
-- [ ] Make people be able to report abusers and suspend abusers.
-- [ ] Warn senders that abusing reports will lead to a permanent suspension.
+- [ ] After 500 users: Reply and chat function.
+- [ ] After 500 users: Use push notification for users who have apps.
+- [ ] After 1,000 users: Show maximum two numbers when a user's friend has more than one numbers.
+- [ ] After 1,000 users: Enable using alias.
+- [ ] After 1,000 users: Enable voice mail.
+- [ ] After 1,000: Show manner score instead of the profile picture.
 
 ### Performance
 
@@ -23,6 +23,8 @@
 
 ## Completed
 
+- [x] Make people be able to report abusers and suspend abusers.
+- [x] Warn senders that abusing reports will lead to a permanent suspension.
 - [x] Make iOS version.
   - [x] App Icon
     - [x] Change for Android, too.

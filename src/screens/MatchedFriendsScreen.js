@@ -32,6 +32,15 @@ const MatchedFriendsScreen = () => {
     fetch('https://heartsignal.dev/api/users/matched-friends', fetchOptions)
       .then(async (res) => {
         const data = await res.json();
+        if (res.status === 403) {
+          alert('신고 누적으로 로그아웃됩니다.');
+          Users.clearUser();
+          props.navigation.reset({
+            index: 0,
+            routes: [{name: 'Login'}],
+          });
+          return;
+        }
         if (res.status === 200) {
           setFriends(data.reverse());
         } else {

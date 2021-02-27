@@ -85,8 +85,8 @@ const MySignalScreen = () => (
         </ProfilePicView>
       </ProfileView>
       <MarginBottom>
-        <Description>2021년 3월 1일 이후 발신 문자의 경우</Description>
-        <Description>문자 수신 후 50일이 지나면 발신자가 공개됩니다.</Description>
+        <Description>신고가 2회 이상 누적될 경우</Description>
+        <Description>경고 없이 계정이 영구 삭제됩니다.</Description>
       </MarginBottom>
       <SignalView>
         <SignalTab />

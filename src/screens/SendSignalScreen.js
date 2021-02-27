@@ -111,6 +111,15 @@ const SendSignalScreen = (props) => {
     };
     fetch('https://heartsignal.dev/api/users/send-signal', fetchOptions)
       .then(async (res) => {
+        if (res.status === 403) {
+          alert('신고 누적으로 로그아웃됩니다.');
+          Users.clearUser();
+          props.navigation.reset({
+            index: 0,
+            routes: [{name: 'Login'}],
+          });
+          return;
+        }
         if (res.status !== 200) {
           alert('서버에서 답이 이상하게 왔어요.');
         } else {

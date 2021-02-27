@@ -114,7 +114,9 @@ const RegisterCompleteScreen = (props) => {
     fetch('https://heartsignal.dev/api/users/send-auth', fetchOptions)
       .then(async (res) => {
         const data = await res.json();
-        if (data.isDuplicate) {
+        if (data.isBlocked) {
+          alert('신고 누적으로 가입 불가한 번호입니다.');
+        } else if (data.isDuplicate) {
           alert('사용 중인 휴대전화입니다.');
         } else {
           setIsAuthSent(true);
