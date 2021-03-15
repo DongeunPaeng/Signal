@@ -2,9 +2,8 @@
 
 ### Features
 
-- [ ] Now: Publish on AppStore.
-  - [ ] Design Materials.
-  - [ ] Need an account.
+- [ ] (DO THIS ONLY!!!) Now: Publish on AppStore.
+  - [ ] Make signals deleteable.
 - [ ] After 500 users: Reply and chat function.
 - [ ] After 500 users: Use push notification for users who have apps.
 - [ ] After 1,000 users: Show maximum two numbers when a user's friend has more than one numbers.
@@ -19,10 +18,12 @@
 ### Errors & Bugs
 
 - [ ] (Minor) If users don't have any contacts, error says 'filter of undefined...'
+- [ ] Prevent duplicate report.
 - [ ] VirtualizedList warning: you have a large list that is slow to update.
 
 ## Completed
 
+- [x] Splash Screen goes off too early in iPhone.
 - [x] 'Reported' should not be seen in 'SentSignals' screen.
 - [x] Make people be able to report abusers and suspend abusers.
 - [x] Warn senders that abusing reports will lead to a permanent suspension.
