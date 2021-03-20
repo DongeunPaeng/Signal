@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 
-import {Privacy, TermsOfUse} from '../utils/text';
+import {Privacy, TermsOfUse, Contact} from '../utils/text';
 import Users from '../stores/Users';
 import LinearGradientWrapper from '../wrappers/LinearGradientWrapper';
 
@@ -20,6 +20,10 @@ const contents = [
   {
     title: '개인정보처리방침',
     content: Privacy,
+  },
+  {
+    title: '연락처',
+    content: Contact,
   },
 ];
 

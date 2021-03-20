@@ -50,7 +50,7 @@ const SignalCard = ({
   const dayDiff = -formattedDate.diffNow('days').toFormat('dd');
 
   return (
-    <Container onPress={location === '받은' ? onPress : null}>
+    <Container onPress={location === '받은' ? (reported ? null : onPress) : null}>
       <MsgContainerLeft>
         <FriendsText>{to ? to : '익명의 친구'}</FriendsText>
         <MsgText>{msg}</MsgText>

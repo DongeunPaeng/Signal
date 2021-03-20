@@ -316,3 +316,4 @@ export const TermsOfUse = `
 ③ 회사와 회원 간에 분쟁이 발생하여 제3의 분쟁조정기관이 조정할 경우 회사는 이용제한 등 회원에게 조치한 사항을 성실히 증명하고, 조정기관의 조정에 따를 수 있습니다.
 `
 
+export const Contact = `nuguge327@gmail.com`

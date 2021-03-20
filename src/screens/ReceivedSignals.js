@@ -22,7 +22,8 @@ const ReceivedSignals = (props) => {
     return Alert.alert(
       '발신자를 신고하시겠어요?',
       `신고가 2회 이상 누적될 경우
-발신자의 계정이 영구 삭제됩니다.`,
+발신자의 계정이 영구 삭제됩니다.
+신고된 문자는 24시간 이내에 삭제됩니다.`,
       [
         {
           text: '취소',
@@ -55,7 +56,7 @@ const ReceivedSignals = (props) => {
                   return;
                 }
                 if (res.status === 200) {
-                  alert('신고가 접수되었습니다.');
+                  alert('신고가 접수되었습니다.\n24시간 이내에 삭제됩니다.');
                   return;
                 }
                 alert('서버에서 답이 이상하게 왔어요...');

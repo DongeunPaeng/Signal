@@ -2,8 +2,9 @@
 
 ### Features
 
-- [ ] (DO THIS ONLY!!!) Now: Publish on AppStore.
-  - [ ] Make signals deleteable.
+- [ ] Change the app to rate other people.
+- [ ] Prevent duplicate report.
+- [ ] Delete messages within 24 hours after reported. (Make a slack alert bot.)
 - [ ] After 500 users: Reply and chat function.
 - [ ] After 500 users: Use push notification for users who have apps.
 - [ ] After 1,000 users: Show maximum two numbers when a user's friend has more than one numbers.
@@ -11,14 +12,9 @@
 - [ ] After 1,000 users: Enable voice mail.
 - [ ] After 1,000: Show manner score instead of the profile picture.
 
-### Performance
-
-- [ ] Fix striping issue (unable to strip...)
-
 ### Errors & Bugs
 
 - [ ] (Minor) If users don't have any contacts, error says 'filter of undefined...'
-- [ ] Prevent duplicate report.
 - [ ] VirtualizedList warning: you have a large list that is slow to update.
 
 ## Completed
