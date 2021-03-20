@@ -2,9 +2,9 @@
 
 ### Features
 
+- [ ] Disallow emoji.
+- [ ] Hide keyboard by clicking elsewhere.
 - [ ] Change the app to rate other people.
-- [ ] Prevent duplicate report.
-- [ ] Delete messages within 24 hours after reported. (Make a slack alert bot.)
 - [ ] After 500 users: Reply and chat function.
 - [ ] After 500 users: Use push notification for users who have apps.
 - [ ] After 1,000 users: Show maximum two numbers when a user's friend has more than one numbers.
@@ -19,6 +19,8 @@
 
 ## Completed
 
+- [x] Prevent duplicate report.
+- [x] Delete messages within 24 hours after reported. (Make a slack alert bot.)
 - [x] Splash Screen goes off too early in iPhone.
 - [x] 'Reported' should not be seen in 'SentSignals' screen.
 - [x] Make people be able to report abusers and suspend abusers.
