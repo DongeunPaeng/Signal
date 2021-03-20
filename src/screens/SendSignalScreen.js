@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components/native';
-import {Alert} from 'react-native';
+import {Keyboard, TouchableWithoutFeedback, Alert} from 'react-native';
 
 import Users from '../stores/Users';
 import LinearGradientWrapper from '../wrappers/LinearGradientWrapper';
@@ -148,27 +148,34 @@ const SendSignalScreen = (props) => {
 
   return (
     <LinearGradientWrapper>
-      <Container>
-        <ReceiverView>
-          <NameTxt>{props.route.params.name}</NameTxt>
-          <PhoneTxt>{props.route.params.phone}</PhoneTxt>
-        </ReceiverView>
-        <MessageView>
-          <MessageInput autoCapitalize="none" onChangeText={handleTextChange} />
-          <MessageDesc>
-            20자 이내로 입력해주세요.
-          </MessageDesc>
-        </MessageView>
-        <BtnView>
-          <SubMessageDesc>
-            친구도 내게 문자를 보내면{'\n'}'서로 호감'에 등록됩니다.{'\n'}
-            {'\n'}신고가 2회 이상 누적될 경우{'\n'}경고 없이 계정이 영구 삭제됩니다.
-          </SubMessageDesc>
-          <Button onPress={sendSignal}>
-            <ButtonText>시그널 전송</ButtonText>
-          </Button>
-        </BtnView>
-      </Container>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <Container>
+          <ReceiverView>
+            <NameTxt>{props.route.params.name}</NameTxt>
+            <PhoneTxt>{props.route.params.phone}</PhoneTxt>
+          </ReceiverView>
+          <MessageView>
+            <MessageInput
+              keyboardType={
+                Platform.OS === 'ios' ? 'ascii-capable' : 'visible-password'
+              }
+              autoCapitalize="none"
+              onChangeText={handleTextChange}
+            />
+            <MessageDesc>20자 이내로 입력해주세요.</MessageDesc>
+          </MessageView>
+          <BtnView>
+            <SubMessageDesc>
+              친구도 내게 문자를 보내면{'\n'}'서로 호감'에 등록됩니다.{'\n'}
+              {'\n'}신고가 2회 이상 누적될 경우{'\n'}경고 없이 계정이 영구
+              삭제됩니다.
+            </SubMessageDesc>
+            <Button onPress={sendSignal}>
+              <ButtonText>시그널 전송</ButtonText>
+            </Button>
+          </BtnView>
+        </Container>
+      </TouchableWithoutFeedback>
     </LinearGradientWrapper>
   );
 };

@@ -2,15 +2,11 @@
 
 ### Features
 
-- [ ] Disallow emoji.
-- [ ] Hide keyboard by clicking elsewhere.
-- [ ] Change the app to rate other people.
-- [ ] After 500 users: Reply and chat function.
-- [ ] After 500 users: Use push notification for users who have apps.
-- [ ] After 1,000 users: Show maximum two numbers when a user's friend has more than one numbers.
-- [ ] After 1,000 users: Enable using alias.
-- [ ] After 1,000 users: Enable voice mail.
-- [ ] After 1,000: Show manner score instead of the profile picture.
+- [ ] Reply and chat function.
+- [ ] Use push notification for users who have apps.
+- [ ] Show maximum two numbers when a user's friend has more than one numbers.
+- [ ] Enable using alias.
+- [ ] Enable voice mail.
 
 ### Errors & Bugs
 
@@ -19,6 +15,9 @@
 
 ## Completed
 
+- [x] Show manner score instead of the profile picture.
+- [x] Disallow emoji.
+- [x] Hide keyboard by clicking elsewhere.
 - [x] Prevent duplicate report.
 - [x] Delete messages within 24 hours after reported. (Make a slack alert bot.)
 - [x] Splash Screen goes off too early in iPhone.
