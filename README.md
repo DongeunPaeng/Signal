@@ -2,6 +2,7 @@
 
 ### Features
 
+- [ ] Enable Korean typing but disable emoji.
 - [ ] Reply and chat function.
 - [ ] Use push notification for users who have apps.
 - [ ] Show maximum two numbers when a user's friend has more than one numbers.

@@ -26,8 +26,8 @@ android {
         applicationId "com.mysignal"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 13 // here
-        versionName "4.3" // here
+        versionCode 14 // here
+        versionName "5.0" // here
     }
     splits {
         abi {

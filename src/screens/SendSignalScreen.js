@@ -156,9 +156,6 @@ const SendSignalScreen = (props) => {
           </ReceiverView>
           <MessageView>
             <MessageInput
-              keyboardType={
-                Platform.OS === 'ios' ? 'ascii-capable' : 'visible-password'
-              }
               autoCapitalize="none"
               onChangeText={handleTextChange}
             />
