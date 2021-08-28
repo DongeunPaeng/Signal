@@ -67,7 +67,6 @@ const ContactsScreen = (props) => {
         phone: trimmedContacts,
       }),
     };
-    let finalContacts;
     await fetch('https://heartsignal.dev/api/users/get-users', fetchOptions)
       .then(async (res) => {
         if (res.status === 413) {
@@ -87,19 +86,15 @@ const ContactsScreen = (props) => {
           alert('서버에서 응답이 이상하게 날아왔어요.');
           return;
         }
-        const data = await res.json();
-        const existingUsers = data.map((user) => user.phone);
-        finalContacts = trimmedContacts.map((contact) => {
-          return existingUsers.includes(contact.phone)
-            ? {existing: true, ...contact}
-            : {existing: false, ...contact};
-        });
       })
       .catch((err) => {
         console.log('err:', err);
       });
-    finalContacts?.sort((a, b) => b.existing - a.existing);
-    setContacts(finalContacts ? finalContacts : trimmedContacts);
+    setContacts(
+      trimmedContacts.sort((a, b) => {
+        return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+      }),
+    );
   };
 
   useEffect(() => {
@@ -114,7 +109,6 @@ const ContactsScreen = (props) => {
     <Contact
       name={item.name}
       phone={item.phone}
-      existing={item.existing}
       onPress={() => {
         props.navigation.navigate('SendSignalScreen', {
           name: item.name,
